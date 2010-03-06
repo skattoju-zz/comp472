@@ -1,0 +1,344 @@
+;Remember that you need to define your own implementation of
+;variablep, i.e. your own representation of logic variables.
+;The representation of clauses is rather simple.
+
+;Have fun.
+;; TP.LISP : A FOL Theorem Prover. 
+;;
+;; Implemented by Ya Yang for W4701, homework #3.
+;; (and slightly modified by the TA)
+;;
+;; - Mauricio
+;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;This lisp program is a First Order Logic Theorem Prover
+;The input is in clause form and the output is either the
+;steps of the proof or the claim that can't be proved
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                                    
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;This function makes a copy of a list L to Lcp
+;using recursion
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(Defun copy (L)
+
+       (let ( (Lcp Nil))
+       (cond         
+             ((null L) (setf Lcp Nil))
+             ((atom L) (setf Lcp L))
+             (t        (setf Lcp (cons (first L) (copy (rest L))))))))
+
+
+            
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Define the structure of a node which records one step of resolving
+;that leads to the proof
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defstruct Node 
+   resolvent      ;the clause derived from resolution
+   clause1               
+   clause2
+   subst)         ;the substitution list used by the resolution     
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;This function decides whether or not a clause is one of those
+;resolvent s in the record list
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(Defun inrecord (clause)
+       
+                    
+    (let ((thenode nil))
+       (do ((i (- (length record) 1) (setf i (- i 1))))
+           ((= i -1))
+             
+           (setf thenode (make-Node :resolvent (Node-resolvent (nth i record))
+                                    :clause1   (Node-clause1 (nth i record))
+                                    :clause2   (Node-clause2 (nth i record))
+                                    :subst     (Node-subst (nth i record))))
+               
+                                   
+           (if (equal clause (Node-resolvent thenode)) 
+                   
+               (return-from inrecord  thenode)))
+                   
+        nil))      
+                                                         
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;This function trace the record list and prints out every 
+;step taken in the proof
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(Defun trace-solution (record clause)
+
+            
+    (let ( (thenode Nil))
+       (cond
+            ( (setf thenode (inrecord clause))   
+                 
+              ;if the clause is a resolvent, recurse its two clauses       
+              (trace-solution record (Node-clause1 thenode))
+              (trace-solution record (Node-clause2 thenode))
+			  (setf step (+ step 1))
+              (format T " ===step ~d ===: ~% ~s + ~s using ~s = ~s ~%"
+                     step (Node-clause1 thenode) (Node-clause2 thenode)
+                    (Node-subst thenode) (Node-resolvent thenode)))
+                               
+            ;if the clause is an input, goes back                                                
+            (t 'back))))
+                                                            
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;This function tests whether two literals are complementary  
+;i.e. one positive and one negative literal with the same predicate
+;a positive literal is of the form (P t1 .. tn), and a negative 
+;literal is of the form (~ P t1 .. tn) where ti is a FO term
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(Defun complementary-lits (L1 L2)
+	(cond
+		((or (atom L1) (atom L2)) Nil)
+		((eql '~ (car L1)) (eql (cadr L1) (car L2)))
+		((eql '~ (car L2)) (eql (cadr L2) (car L1)))
+		(t Nil)))                  
+		
+		
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;This function determines whether a logic variable "v" appears 
+;anywhere within some arbitrary first order term "term"     
+;a term is of the form (f t1 ..tm) where ti is itself a FO term
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;		
+(Defun occurs (v term)
+	(cond
+		((null term) Nil)
+		((atom term) (eql v term))
+		((atom (car term))  (cond ((eql v (car term)) t)
+		                          (t           (occurs v (cdr term)))))
+		(t           (or (occurs v (car term)) (occurs v (cdr term))))))                   
+		
+		
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;This function determines whether or not two literals are unifiable
+;and returns the substitution list making them unified if so
+;This functions assumes that the literals are complementary
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(Defun Unifiable (L1 L2)
+	(cond
+		((or (atom L1) (atom L2)) 'Fail)
+		((eql '~ (car L1))  (Unify (cdr L1) L2))
+		(t                  (Unify L1 (cdr L2)))))
+		
+		
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;This function returns a substitution list if two literals are 
+;unifiable. returns an 'fail is not unifiable.Note that the 
+;substitution list a list of "dotted pairs"                              
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(Defun Unify (L1 L2)    
+    
+  (prog (Subst s i)
+	
+	(cond
+	 ((or (atom L1) (atom L2))              ; if L1 or L2 are atoms
+	  (cond
+	   ((eql L1 L2) (return Nil))     ; identical, substitution is nil
+	   ((variablep L1) 
+	    (cond                             ; L1 is a logic variable
+	     ((Occurs L1 L2) (return 'Fail))  ; L1 occurs in L2, can't unify
+	     (t       (return (list (cons L1 L2)))))) ;otherwise,
+					              ;L1 binding to L2
+	   
+	   ((variablep L2)
+	    (cond          ; ditto for L2     
+	     ((Occurs L2 L1) (return 'Fail))
+	     (t       (return (list (cons L2 L1))))))
+	   (t                  (return 'Fail)))) ;otherwise, not unifiable  
+	 
+	 ((Not (eql (length L1) (length L2))) (return 'Fail)))
+	
+	(setq Subst Nil i -1)        ; i iterates from 0 to (length L1)-1
+	
+	
+ Step4  (setq i(+ 1 i))
+	(cond ((= i (length L1)) (return Subst)))	; Termination of loop
+	
+	(setq S (Unify (nth i L1) (nth i L2)))  ; Unify the ith term
+	(cond 
+	 ((eql S 'Fail) (return 'Fail))
+	 ((not (null S))   
+	  (setf L1 (sublis S L1))   ;substitute L1 using S
+	  (setf L2 (sublis S L2))   ;substitute L2 using S
+	  (setq Subst (append S Subst))))  ;Add S to Subst
+	(go Step4)))	     
+
+
+           
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;This function determines whether an atom is a variable                        
+;We define the form of a variable as ?x
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;                     
+(defun variablep(x)
+ (and (symbolp x) (eql (char (symbol-name x) 0) '#\?)))
+                                                          
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;This function resolve two clauses C1 and C2 having complementary and 
+;unifiable literals L1 and L2 with substitution list Subst. 
+;return the resolvent C 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(Defun Resolve (C1 C2 index1 index2 Subst)
+                                  
+  (setf C nil)                         ;initialize the resolvent
+	
+  (do ((i1 0 (setf i1 (+ 1 i1))))      ;apply the substitution to C1
+      ((= i1 (length C1)))
+	
+      (if (/= i1 index1)		;if not one the complementary term
+	  (let ()    (setf (nth i1 C1) (sublis Subst (nth i1 C1))) 
+	       (setf C (cons (nth i1 C1) C)))))
+  
+  
+  (do ((i2 0 (setf i2 (+ 1 i2))))       ;apply the substitution to C2
+      ((= i2 (length C2)))
+      
+      (if (/= i2 index2)
+	  (let ()    (setf (nth i2 C2) (sublis Subst (nth i2 C2))) 
+	       (setf C (cons (nth i2 C2) C)))))
+  
+  C)       ; return the resolvent clause
+
+	 
+		
+                                                     
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;The function checks whether or not there is a pair of literals
+;in the two clauses that are unifiable. If not, return 'fail, otherwise
+;resolve the two clauses
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(Defun Check (C1 C2)
+     
+  (let ((i1 0) (i2 0) (L1 Nil) (L2 Nil))
+  
+    (setf resolvent 'unsolved)
+    (do ((i1 0 (setf i1 (+ 1 i1))))  ; check every literal of C1
+	((= i1 (length C1)))
+         
+         
+	(if (Not (eq resolvent 'unsolved))   
+	    (return resolvent))		;complementary and unifiable 
+					;literals found	and resolved. 
+					;Get out of the function
+	
+	(setf L1 (nth i1 C1))           ; check every literal of C2
+	(do ((i2 0 (setf i2 (+ 1 i2))))
+	    ((= i2 (length C2)))
+	    
+	    (setf L2 (nth i2 C2)) 
+	    (if (and (complementary-lits L1 L2) ;these two clauses are
+					        ; resolvable
+		     (Not (eql (setf Subst (Unifiable L1 L2)) 'Fail)))
+		
+		(let ()  
+		  (setf C1cp (copy C1))	    ;To remain C1, C2 unchanged,
+		  (setf C2cp (copy C2))	    ;apply resolving on their copies
+		  (setf resolvent (Resolve C1cp C2cp i1 i2 Subst))
+		  
+		  ; Record the resolve by making a new node
+		  (setf newnode (make-Node  :resolvent C
+					    :clause1   C1
+					    :clause2   C2
+					    :subst     Subst))
+		  ; Add the new node to the list
+		  (setf record (append record (list newnode)))
+		  (return resolvent))
+	      )))                     
+    
+    resolvent))                 
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;This is the main procedure which proves the theorem by using
+;resolution. 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(Defun Prove (Clauses)
+       
+  (let ((i1 0) (i2 0) (C1 Nil) (C2 Nil) )
+    
+    ;choose the first clause from the end of the list      
+    (do ((i1 (- (length Clauses) 1) (setf i1 (- i1 1))))
+	((= i1 (- NumOfPre 1)))          
+					;inner loop over Clauses for 
+					;the choice of C1
+	(setf C1 (nth i1 Clauses))      ;C1 is from the set of newly
+					;generated clauses 
+                  
+					;choose the second clause from
+					;the beginning of the list 
+	(do ((i2 0 (setf i2 (+ 1 i2)))) 
+	    ((= i2 NumOfPre))        
+					; outer loop over Clauses for the
+					; choice of C2
+              
+	    (setf C2 (nth i2 Clauses))  ;C2 is from the set of axioms
+
+					;check the two clauses to see
+					;whether we can resolve them 
+	    (setf result (Check C1 C2))
+					;if the newly derived resolvent 
+					;is identical to someone already
+					;in the Clauses, we just go to the
+					;next clause without adding it
+					;to Clauses and starts all over again 
+	    (if (and (Not (eq 'unsolved result))
+		     (Not (member result Clauses :test 'equal)))   
+					;get out of the function
+		(return-from Prove result))))
+                     
+    (return-from prove 'Fail)))   ; no clause can resolve, can't prove. 
+                 
+                 
+ 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;This function drives the whole theorem prover
+;premises is the set of inputs clauses(axioms)
+;negconclusion is the negated conclusion 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(Defun ProveDriver (premise negconclusion)            
+  ;sort the premises so that they are in the increasing order of
+  ;their lengths
+  (setf premise 
+	(sort premise  #'(lambda (cl1 cl2) (< (length cl1) (length cl2)))))
+  
+  ;append the negated conclusion clause to the premises             
+  (setf CL (append premise (list negconclusion)))
+
+  (setf done 0)                    
+  (setf NumOfPre (- (length CL) 1)) ;to remember the number of axioms input
+  (setf record Nil)                 ;initialize the record list
+       
+  (loop
+
+   (setf done (Prove CL)) 
+   (cond 
+             
+    ((eq done 'Fail)	  ; terminate with failure to prove
+     (return "The theorem can't be proved")) 
+    
+    ((eq done Nil)  	  ;terminate with the proof
+     (print  "I found the proof") 
+     (setf step 0)
+     (trace-solution record Nil) 
+     (return))   
+    
+    (t	                                      ;no resolvents this iteration
+     (setf CL (append CL (list done)))))))    ;keep on doing on expanded CL
+                                                                               
+
