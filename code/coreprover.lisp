@@ -1,3 +1,4 @@
+(make-package "coreprover")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;  A Classic Resolution Theorem Prover.
 ;;;`
@@ -45,11 +46,11 @@
 ;;;
 ;;; proof-node
 ;;;   A proof-node is a structure that holds one resolvent created
-;;;   during the proof.  The structure consists of tghe clause itself,
+;;;   during the proof.  The structure consists of the clause itself,
 ;;;   the binding list resulted from the unification of its parent
 ;;;   clauses, pointers to the proof-nodes of its parent clauses, and
 ;;;   various flags and counters.  The proof-node that contains the
-;;;   empty clause at the end of the proof process is in fact the rot
+;;;   empty clause at the end of the proof process is in fact the root
 ;;;   of the PROOF-TREE that can be traced by following the parent
 ;;;   links.  The algorithm starts with a list of proof-nodes, one for
 ;;;   each clause of the basic clause set (of the axioms and the
@@ -156,10 +157,10 @@
 (defparameter *resource-limit* 1000
     "The maximum number of resolutions allowed for proving one theorem")
 
-(defvar *trace-prover* nil
+(defvar *trace-prover* t
     "When T, the prover displays each unification attempt")
 
-(defvar *show-progress* 20
+(defvar *show-progress* nil
     "When not nil, shows a dot every K resolutions")
    
 (defvar *renaming-table* (make-hash-table)
@@ -186,9 +187,10 @@
  (let ((axioms nil) new-line)
   (with-open-file (f file :direction :input )
      (setf new-line (read-line f nil :eof))
-     (loop while (not (eql new-line :eof)) do
-       (push (string->prefix new-line) axioms)
-       (setf new-line (read-line f nil :eof))))
+     (loop while (not (eql new-line :eof)) 
+	do
+	(push (string->prefix new-line) axioms)
+	(setf new-line (read-line f nil :eof))))
   (setf *axioms*
 	(convert-to-cnf (conjunction (reverse axioms))))))
 
@@ -664,6 +666,8 @@
    
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Test functions
+;;; all coreprover test case function names are prepended with c to differentiate them
+;;; from the test cases of testprover.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun compare-strategies  (strategies theorem &key (axioms
@@ -676,12 +680,28 @@
 						    axioms))))
 	collect (print res)))
 
-(defun test1 ()
+(defun ctest1 ()
   (read-axioms "test1.lgc")
   (compare-strategies (list *default-resolution-strategy*
 		            *shortest-min-shortest-sum-strategy*
 			    *shortest-min-clause-strategy*
 			    )
 		      "mother(sara,yzhak)"))
+
+(defun ctest2 ()
+  (read-axioms "test2.lgc")
+  (compare-strategies (list *default-resolution-strategy*
+		            *shortest-min-shortest-sum-strategy*
+			    *shortest-min-clause-strategy*
+			    )
+		      "kills(cat,curiosity)"))
+
+(defun ctest3 ()
+  (read-axioms "test3.lgc")
+  (compare-strategies (list *default-resolution-strategy*
+		            *shortest-min-shortest-sum-strategy*
+			    *shortest-min-clause-strategy*
+			    )
+		      "kills(cat,curiosity)"))
 
 			

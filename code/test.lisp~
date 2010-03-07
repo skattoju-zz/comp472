@@ -16,6 +16,7 @@
 		  ((~ M) (C)))
 	       '((~ D))))
 
+(in-package "testprover")
 (Defun Test2 ()
   (ProveDriver '( ((mother amity betsy))
 		  ((~ daughter ?u ?w) (mother ?w ?u))

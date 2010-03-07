@@ -49,11 +49,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;This function decides whether or not a clause is one of those
 ;resolvent s in the record list
+;--> checks if a clause has been recorded.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (Defun inrecord (clause)
-       
-                    
-    (let ((thenode nil))
+
+   (let ((thenode nil))
        (do ((i (- (length record) 1) (setf i (- i 1))))
            ((= i -1))
              
@@ -67,9 +67,7 @@
                    
                (return-from inrecord  thenode)))
                    
-        nil))      
-                                                         
-
+        nil))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;This function trace the record list and prints out every 
@@ -193,7 +191,6 @@
 ;return the resolvent C 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (Defun Resolve (C1 C2 index1 index2 Subst)
-                                  
   (setf C nil)                         ;initialize the resolvent
 	
   (do ((i1 0 (setf i1 (+ 1 i1))))      ;apply the substitution to C1
@@ -202,11 +199,11 @@
       (if (/= i1 index1)		;if not one the complementary term
 	  (let ()    (setf (nth i1 C1) (sublis Subst (nth i1 C1))) 
 	       (setf C (cons (nth i1 C1) C)))))
-  
-  
+
+
   (do ((i2 0 (setf i2 (+ 1 i2))))       ;apply the substitution to C2
       ((= i2 (length C2)))
-      
+
       (if (/= i2 index2)
 	  (let ()    (setf (nth i2 C2) (sublis Subst (nth i2 C2))) 
 	       (setf C (cons (nth i2 C2) C)))))

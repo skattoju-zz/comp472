@@ -1,0 +1,3 @@
+(load "psgraph.lisp")
+(load "xref.lisp")
+(load "load-prover.lisp")

@@ -1,0 +1,531 @@
+(clear-tables)
+(setf (source-file 'TEST2) '("coreprover.lisp"))
+(setf (source-file 'TEST1) '("coreprover.lisp"))
+(setf (source-file 'COMPARE-STRATEGIES) '("coreprover.lisp"))
+(setf (source-file 'APPLY-INITIAL-CLAUSE-FILTERS) '("coreprover.lisp"))
+(setf (source-file 'TRIVIAL-CLAUSE-FILTER) '("coreprover.lisp"))
+(setf (source-file 'TAUTOLOGY-FILTER) '("coreprover.lisp"))
+(setf (source-file 'LITERAL-SET-EQUIVALENCE) '("coreprover.lisp"))
+(setf (source-file 'UNIQUENESS-FILTER) '("coreprover.lisp"))
+(setf (source-file 'APPLY-CLAUSE-FILTERS) '("coreprover.lisp"))
+(setf (source-file 'TRIVIAL-CANDIDATE-FILTER) '("coreprover.lisp"))
+(setf (source-file 'SETOFSUPPORT-FILTER) '("coreprover.lisp"))
+(setf (source-file 'APPLY-CANDIDATE-FILTERS) '("coreprover.lisp"))
+(setf (source-file 'TRIVIAL-ORDERING) '("coreprover.lisp"))
+(setf (source-file 'SHORTEST-SUM) '("coreprover.lisp"))
+(setf (source-file 'NUMERIC-RELATION) '("coreprover.lisp"))
+(setf (source-file 'SHORTEST-MIN-CLAUSE) '("coreprover.lisp"))
+(setf (source-file 'CANDIDATE-ORDERING) '("coreprover.lisp"))
+(setf (source-file 'RESOLUTION) '("coreprover.lisp"))
+(setf (source-file 'ELIMINATE-DUPLICATES) '("coreprover.lisp"))
+(setf (source-file 'WITHOUT-NOT) '("coreprover.lisp"))
+(setf (source-file 'UNIFY-CAND) '("coreprover.lisp"))
+(setf (source-file 'RESOLVE-CAND) '("coreprover.lisp"))
+(setf (source-file 'GET-CLAUSE-CANDIDATES) '("coreprover.lisp"))
+(setf (source-file 'NEGATIVE-LITERAL) '("coreprover.lisp"))
+(setf (source-file 'GET-PREDICATE-NAME) '("coreprover.lisp"))
+(setf (source-file 'UPDATE-PREDICATE-INDEX) '("coreprover.lisp"))
+(setf (source-file 'CONVERT-TO-CNF) '("coreprover.lisp"))
+(setf (source-file 'SETIFY) '("coreprover.lisp"))
+(setf (source-file 'THEOREM-PROVER) '("coreprover.lisp"))
+(setf (source-file 'PROVE) '("coreprover.lisp"))
+(setf (source-file 'READ-AXIOMS) '("coreprover.lisp"))
+(setf (source-file 'PROOF-RESULT) '("coreprover.lisp"))
+(setf (source-file 'PROOF-NODE) '("coreprover.lisp"))
+(setf (callers-list 'COMPARE-STRATEGIES :file) '("coreprover.lisp"))
+(setf (callers-list 'READ-AXIOMS :file) '("coreprover.lisp"))
+(setf (callers-list 'PRINT :file) '("coreprover.lisp"))
+(setf (callers-list 'PROVE :file) '("coreprover.lisp"))
+(setf (callers-list 'MULTIPLE-VALUE-LIST :file) '("coreprover.lisp"))
+(setf (callers-list 'STRATEGY :file) '("coreprover.lisp"))
+(setf (callers-list 'RESOLUTION-INITIAL-CLAUSE-FILTERS :file) '("coreprover.lisp"))
+(setf (callers-list 'NODES :file) '("coreprover.lisp"))
+(setf (callers-list 'NEVER :file) '("coreprover.lisp"))
+(setf (callers-list 'RENAMING? :file) '("coreprover.lisp"))
+(setf (callers-list 'SUBSETP :file) '("coreprover.lisp"))
+(setf (callers-list 'SET2 :file) '("coreprover.lisp"))
+(setf (callers-list 'SET1 :file) '("coreprover.lisp"))
+(setf (callers-list 'LITERAL-SET-EQUIVALENCE :file) '("coreprover.lisp"))
+(setf (callers-list 'RESOLUTION-CLAUSE-FILTERS :file) '("coreprover.lisp"))
+(setf (callers-list 'ALWAYS :file) '("coreprover.lisp"))
+(setf (callers-list 'FILTER :file) '("coreprover.lisp"))
+(setf (callers-list 'RESOLUTION-CANDIDATE-FILTERS :file) '("coreprover.lisp"))
+(setf (callers-list 'FILTERS :file) '("coreprover.lisp"))
+(setf (callers-list 'SUM2 :file) '("coreprover.lisp"))
+(setf (callers-list '+ :file) '("coreprover.lisp"))
+(setf (callers-list 'SUM1 :file) '("coreprover.lisp"))
+(setf (callers-list '< :file) '("coreprover.lisp"))
+(setf (callers-list 'N2 :file) '("coreprover.lisp"))
+(setf (callers-list 'N1 :file) '("coreprover.lisp"))
+(setf (callers-list 'NUMERIC-RELATION :file) '("coreprover.lisp"))
+(setf (callers-list 'MIN2 :file) '("coreprover.lisp"))
+(setf (callers-list 'LENGTH :file) '("coreprover.lisp"))
+(setf (callers-list 'MIN :file) '("coreprover.lisp"))
+(setf (callers-list 'MIN1 :file) '("coreprover.lisp"))
+(setf (callers-list 'FUNCALL :file) '("coreprover.lisp"))
+(setf (callers-list 'CASE :file) '("coreprover.lisp"))
+(setf (callers-list 'RESOLUTION-CANDIDATE-ORDERING-STRATEGIES :file) '("coreprover.lisp"))
+(setf (callers-list 'STRATEGIES :file) '("coreprover.lisp"))
+(setf (callers-list 'CAND2 :file) '("coreprover.lisp"))
+(setf (callers-list 'CAND1 :file) '("coreprover.lisp"))
+(setf (callers-list '*CURRENT-RESOLUTION-STRATEGY* :file) '("coreprover.lisp"))
+(setf (callers-list '*SHORTEST-MIN-CLAUSE-STRATEGY* :file) '("coreprover.lisp"))
+(setf (callers-list '*SHORTEST-MIN-SHORTEST-SUM-STRATEGY* :file) '("coreprover.lisp"))
+(setf (callers-list '*SETOFSUPPORT-STRATEGY* :file) '("coreprover.lisp"))
+(setf (callers-list 'MAKE-RESOLUTION :file) '("coreprover.lisp"))
+(setf (callers-list '*DEFAULT-RESOLUTION-STRATEGY* :file) '("coreprover.lisp"))
+(setf (callers-list 'MEMBER :file) '("coreprover.lisp"))
+(setf (callers-list 'ON :file) '("coreprover.lisp"))
+(setf (callers-list 'TAIL :file) '("coreprover.lisp"))
+(setf (callers-list 'EXP :file) '("coreprover.lisp"))
+(setf (callers-list 'NTH :file) '("coreprover.lisp"))
+(setf (callers-list 'WITHOUT-NOT :file) '("coreprover.lisp"))
+(setf (callers-list 'UNIFY :file) '("coreprover.lisp"))
+(setf (callers-list 'COPY-TREE :file) '("coreprover.lisp"))
+(setf (callers-list 'PUSHNEW :file) '("coreprover.lisp"))
+(setf (callers-list 'RES :file) '("coreprover.lisp"))
+(setf (callers-list 'APPLY-CANDIDATE-FILTERS :file) '("coreprover.lisp"))
+(setf (callers-list 'INDEX1 :file) '("coreprover.lisp"))
+(setf (callers-list 'LITERAL1 :file) '("coreprover.lisp"))
+(setf (callers-list 'CONS :file) '("coreprover.lisp"))
+(setf (callers-list 'NEGATIVE-LITERAL :file) '("coreprover.lisp"))
+(setf (callers-list 'GETHASH :file) '("coreprover.lisp"))
+(setf (callers-list 'HASH-ENTRY :file) '("coreprover.lisp"))
+(setf (callers-list 'GET-PREDICATE-NAME :file) '("coreprover.lisp"))
+(setf (callers-list 'PREDICATE-NAME :file) '("coreprover.lisp"))
+(setf (callers-list 'LITERAL-INDEX :file) '("coreprover.lisp"))
+(setf (callers-list 'LITERAL :file) '("coreprover.lisp"))
+(setf (callers-list 'INDEX :file) '("coreprover.lisp"))
+(setf (callers-list 'CLAUSE-NODE :file) '("coreprover.lisp"))
+(setf (callers-list 'TAUTOLOGY-FILTER :file) '("coreprover.lisp"))
+(setf (callers-list 'CLAUSE :file) '("coreprover.lisp"))
+(setf (callers-list 'REST :file) '("coreprover.lisp"))
+(setf (callers-list 'LITERAL-CLAUSE? :file) '("coreprover.lisp"))
+(setf (callers-list 'CLAUSES :file) '("coreprover.lisp"))
+(setf (callers-list '->CNF :file) '("coreprover.lisp"))
+(setf (callers-list 'CNF :file) '("coreprover.lisp"))
+(setf (callers-list 'P :file) '("coreprover.lisp"))
+(setf (callers-list 'ADJOIN :file) '("coreprover.lisp"))
+(setf (callers-list 'EL :file) '("coreprover.lisp"))
+(setf (callers-list 'NEW-SET :file) '("coreprover.lisp"))
+(setf (callers-list 'IDENTITY :file) '("coreprover.lisp"))
+(setf (callers-list 'KEY :file) '("coreprover.lisp"))
+(setf (callers-list 'EQUALP :file) '("coreprover.lisp"))
+(setf (callers-list 'FUNCTION :file) '("coreprover.lisp"))
+(setf (callers-list 'TEST :file) '("coreprover.lisp"))
+(setf (callers-list 'PROOF-NODE-DEPTH :file) '("coreprover.lisp"))
+(setf (callers-list 'MAX :file) '("coreprover.lisp"))
+(setf (callers-list '1+ :file) '("coreprover.lisp"))
+(setf (callers-list 'PROOF-NODE-SETOFSUPPORT :file) '("coreprover.lisp"))
+(setf (callers-list 'OR :file) '("coreprover.lisp"))
+(setf (callers-list 'APPLY-CLAUSE-FILTERS :file) '("coreprover.lisp"))
+(setf (callers-list 'RESOLVE-CAND :file) '("coreprover.lisp"))
+(setf (callers-list 'SUBST-BINDINGS :file) '("coreprover.lisp"))
+(setf (callers-list 'RENAME-VARIABLES :file) '("coreprover.lisp"))
+(setf (callers-list 'SETIFY :file) '("coreprover.lisp"))
+(setf (callers-list '+FAIL+ :file) '("coreprover.lisp"))
+(setf (callers-list 'COND :file) '("coreprover.lisp"))
+(setf (callers-list 'UNIFY-CAND :file) '("coreprover.lisp"))
+(setf (callers-list 'FIRST :file) '("coreprover.lisp"))
+(setf (callers-list 'SECOND :file) '("coreprover.lisp"))
+(setf (callers-list 'POP :file) '("coreprover.lisp"))
+(setf (callers-list 'NULL :file) '("coreprover.lisp"))
+(setf (callers-list 'MAKE-PROOF-RESULT :file) '("coreprover.lisp"))
+(setf (callers-list 'RETURN :file) '("coreprover.lisp"))
+(setf (callers-list '> :file) '("coreprover.lisp"))
+(setf (callers-list 'FORCE-OUTPUT :file) '("coreprover.lisp"))
+(setf (callers-list 'FORMAT :file) '("coreprover.lisp"))
+(setf (callers-list 'MOD :file) '("coreprover.lisp"))
+(setf (callers-list 'AND :file) '("coreprover.lisp"))
+(setf (callers-list 'NEW-CLAUSE :file) '("coreprover.lisp"))
+(setf (callers-list 'CAND :file) '("coreprover.lisp"))
+(setf (callers-list 'BINDING :file) '("coreprover.lisp"))
+(setf (callers-list 'RESOLVANT :file) '("coreprover.lisp"))
+(setf (callers-list 'WITH :file) '("coreprover.lisp"))
+(setf (callers-list 'FROM :file) '("coreprover.lisp"))
+(setf (callers-list 'N-RESOLUTIONS :file) '("coreprover.lisp"))
+(setf (callers-list 'UPDATE-PREDICATE-INDEX :file) '("coreprover.lisp"))
+(setf (callers-list 'MERGE :file) '("coreprover.lisp"))
+(setf (callers-list 'CANDIDATE-ORDERING :file) '("coreprover.lisp"))
+(setf (callers-list 'GET-CLAUSE-CANDIDATES :file) '("coreprover.lisp"))
+(setf (callers-list 'SORT :file) '("coreprover.lisp"))
+(setf (callers-list '= :file) '("coreprover.lisp"))
+(setf (callers-list 'NEW-CANDIDATES :file) '("coreprover.lisp"))
+(setf (callers-list 'PROOF-NODE :file) '("coreprover.lisp"))
+(setf (callers-list 'PROOF-NODE-CLAUSE :file) '("coreprover.lisp"))
+(setf (callers-list 'APPLY-INITIAL-CLAUSE-FILTERS :file) '("coreprover.lisp"))
+(setf (callers-list 'WHEN :file) '("coreprover.lisp"))
+(setf (callers-list 'NODE :file) '("coreprover.lisp"))
+(setf (callers-list 'CANDIDATES :file) '("coreprover.lisp"))
+(setf (callers-list 'PREDICATE-INDEX :file) '("coreprover.lisp"))
+(setf (callers-list 'APPEND :file) '("coreprover.lisp"))
+(setf (callers-list 'PROOF-NODES :file) '("coreprover.lisp"))
+(setf (callers-list 'AXIOM-NODES :file) '("coreprover.lisp"))
+(setf (callers-list 'MAKE-PROOF-NODE :file) '("coreprover.lisp"))
+(setf (callers-list 'COLLECT :file) '("coreprover.lisp"))
+(setf (callers-list 'IN :file) '("coreprover.lisp"))
+(setf (callers-list 'C :file) '("coreprover.lisp"))
+(setf (callers-list 'FOR :file) '("coreprover.lisp"))
+(setf (callers-list 'THEOREM-NODES :file) '("coreprover.lisp"))
+(setf (callers-list 'QUOTE :file) '("coreprover.lisp"))
+(setf (callers-list 'LIST :file) '("coreprover.lisp"))
+(setf (callers-list 'THEOREM-CLAUSES :file) '("coreprover.lisp"))
+(setf (callers-list 'LET* :file) '("coreprover.lisp"))
+(setf (callers-list 'AXIOM-CLAUSES :file) '("coreprover.lisp"))
+(setf (callers-list 'PROOF-RESULT-N-RESOLUTIONS :file) '("coreprover.lisp"))
+(setf (callers-list 'PROOF-RESULT-ANSWER :file) '("coreprover.lisp"))
+(setf (callers-list 'VALUES :file) '("coreprover.lisp"))
+(setf (callers-list 'STRINGP :file) '("coreprover.lisp"))
+(setf (callers-list 'IF :file) '("coreprover.lisp"))
+(setf (callers-list 'THEOREM-PROVER :file) '("coreprover.lisp"))
+(setf (callers-list 'RESULT :file) '("coreprover.lisp"))
+(setf (callers-list 'THEOREM :file) '("coreprover.lisp"))
+(setf (callers-list 'REVERSE :file) '("coreprover.lisp"))
+(setf (callers-list 'CONJUNCTION :file) '("coreprover.lisp"))
+(setf (callers-list 'CONVERT-TO-CNF :file) '("coreprover.lisp"))
+(setf (callers-list 'STRING->PREFIX :file) '("coreprover.lisp"))
+(setf (callers-list 'PUSH :file) '("coreprover.lisp"))
+(setf (callers-list 'DO :file) '("coreprover.lisp"))
+(setf (callers-list 'EQL :file) '("coreprover.lisp"))
+(setf (callers-list 'NOT :file) '("coreprover.lisp"))
+(setf (callers-list 'WHILE :file) '("coreprover.lisp"))
+(setf (callers-list 'LOOP :file) '("coreprover.lisp"))
+(setf (callers-list 'READ-LINE :file) '("coreprover.lisp"))
+(setf (callers-list 'SETF :file) '("coreprover.lisp"))
+(setf (callers-list 'F :file) '("coreprover.lisp"))
+(setf (callers-list 'WITH-OPEN-FILE :file) '("coreprover.lisp"))
+(setf (callers-list 'NEW-LINE :file) '("coreprover.lisp"))
+(setf (callers-list 'AXIOMS :file) '("coreprover.lisp"))
+(setf (callers-list 'LET :file) '("coreprover.lisp"))
+(setf (callers-list 'FILE :file) '("coreprover.lisp"))
+(setf (callers-list 'DEFUN :file) '("coreprover.lisp"))
+(setf (callers-list '*AXIOMS* :file) '("coreprover.lisp"))
+(setf (callers-list 'MAKE-HASH-TABLE :file) '("coreprover.lisp"))
+(setf (callers-list '*RENAMING-TABLE* :file) '("coreprover.lisp"))
+(setf (callers-list '*SHOW-PROGRESS* :file) '("coreprover.lisp"))
+(setf (callers-list '*TRACE-PROVER* :file) '("coreprover.lisp"))
+(setf (callers-list 'DEFVAR :file) '("coreprover.lisp"))
+(setf (callers-list '*RESOURCE-LIMIT* :file) '("coreprover.lisp"))
+(setf (callers-list 'DEFPARAMETER :file) '("coreprover.lisp"))
+(setf (callers-list 'DEFSTRUCT :file) '("coreprover.lisp"))
+(setf (callers-list 'COMPARE-STRATEGIES :callers) '(TEST2 TEST1))
+(setf (callers-list 'READ-AXIOMS :callers) '(TEST2 TEST1))
+(setf (callers-list 'PRINT :callers) '(COMPARE-STRATEGIES))
+(setf (callers-list 'PROVE :callers) '(COMPARE-STRATEGIES))
+(setf (callers-list 'MULTIPLE-VALUE-LIST :callers) '(COMPARE-STRATEGIES))
+(setf (callers-list 'RESOLUTION-INITIAL-CLAUSE-FILTERS :callers) '(APPLY-INITIAL-CLAUSE-FILTERS))
+(setf (callers-list 'RENAMING? :callers) '(LITERAL-SET-EQUIVALENCE))
+(setf (callers-list 'SUBSETP :callers) '(LITERAL-SET-EQUIVALENCE))
+(setf (callers-list 'LITERAL-SET-EQUIVALENCE :callers) '(UNIQUENESS-FILTER))
+(setf (callers-list 'RESOLUTION-CLAUSE-FILTERS :callers) '(APPLY-CLAUSE-FILTERS))
+(setf (callers-list 'FILTER :callers) '
+(APPLY-INITIAL-CLAUSE-FILTERS APPLY-CLAUSE-FILTERS
+ APPLY-CANDIDATE-FILTERS))
+(setf (callers-list 'RESOLUTION-CANDIDATE-FILTERS :callers) '(APPLY-CANDIDATE-FILTERS))
+(setf (callers-list '+ :callers) '(SHORTEST-SUM))
+(setf (callers-list '< :callers) '(NUMERIC-RELATION))
+(setf (callers-list 'NUMERIC-RELATION :callers) '(SHORTEST-SUM SHORTEST-MIN-CLAUSE))
+(setf (callers-list 'LENGTH :callers) '(LITERAL-SET-EQUIVALENCE SHORTEST-SUM SHORTEST-MIN-CLAUSE))
+(setf (callers-list 'MIN :callers) '(SHORTEST-MIN-CLAUSE))
+(setf (callers-list 'FUNCALL :callers) '
+(APPLY-INITIAL-CLAUSE-FILTERS APPLY-CLAUSE-FILTERS
+ APPLY-CANDIDATE-FILTERS CANDIDATE-ORDERING))
+(setf (callers-list 'CASE :callers) '(CANDIDATE-ORDERING))
+(setf (callers-list 'RESOLUTION-CANDIDATE-ORDERING-STRATEGIES :callers) '(CANDIDATE-ORDERING))
+(setf (callers-list 'MEMBER :callers) '(TAUTOLOGY-FILTER UNIQUENESS-FILTER ELIMINATE-DUPLICATES))
+(setf (callers-list 'NTH :callers) '(UNIFY-CAND))
+(setf (callers-list 'WITHOUT-NOT :callers) '(UNIFY-CAND))
+(setf (callers-list 'UNIFY :callers) '(UNIFY-CAND))
+(setf (callers-list 'COPY-TREE :callers) '(RESOLVE-CAND))
+(setf (callers-list 'PUSHNEW :callers) '(RESOLVE-CAND))
+(setf (callers-list 'APPLY-CANDIDATE-FILTERS :callers) '(GET-CLAUSE-CANDIDATES))
+(setf (callers-list 'CONS :callers) '(UPDATE-PREDICATE-INDEX))
+(setf (callers-list 'NEGATIVE-LITERAL :callers) '
+(TAUTOLOGY-FILTER GET-CLAUSE-CANDIDATES GET-PREDICATE-NAME
+ UPDATE-PREDICATE-INDEX))
+(setf (callers-list 'GETHASH :callers) '(GET-CLAUSE-CANDIDATES UPDATE-PREDICATE-INDEX))
+(setf (callers-list 'GET-PREDICATE-NAME :callers) '(GET-CLAUSE-CANDIDATES UPDATE-PREDICATE-INDEX))
+(setf (callers-list 'TAUTOLOGY-FILTER :callers) '(CONVERT-TO-CNF))
+(setf (callers-list 'REST :callers) '(CANDIDATE-ORDERING ELIMINATE-DUPLICATES CONVERT-TO-CNF))
+(setf (callers-list 'LITERAL-CLAUSE? :callers) '(CONVERT-TO-CNF))
+(setf (callers-list '->CNF :callers) '(CONVERT-TO-CNF))
+(setf (callers-list 'ADJOIN :callers) '(SETIFY))
+(setf (callers-list 'IDENTITY :callers) '(SETIFY))
+(setf (callers-list 'EQUALP :callers) '(TAUTOLOGY-FILTER ELIMINATE-DUPLICATES RESOLVE-CAND SETIFY))
+(setf (callers-list 'FUNCTION :callers) '
+(TAUTOLOGY-FILTER LITERAL-SET-EQUIVALENCE UNIQUENESS-FILTER
+ ELIMINATE-DUPLICATES RESOLVE-CAND SETIFY))
+(setf (callers-list 'PROOF-NODE-DEPTH :callers) '(THEOREM-PROVER))
+(setf (callers-list 'MAX :callers) '(THEOREM-PROVER))
+(setf (callers-list '1+ :callers) '(THEOREM-PROVER))
+(setf (callers-list 'PROOF-NODE-SETOFSUPPORT :callers) '(SETOFSUPPORT-FILTER THEOREM-PROVER))
+(setf (callers-list 'OR :callers) '
+(SETOFSUPPORT-FILTER GET-CLAUSE-CANDIDATES
+ UPDATE-PREDICATE-INDEX THEOREM-PROVER))
+(setf (callers-list 'APPLY-CLAUSE-FILTERS :callers) '(THEOREM-PROVER))
+(setf (callers-list 'RESOLVE-CAND :callers) '(THEOREM-PROVER))
+(setf (callers-list 'SUBST-BINDINGS :callers) '(THEOREM-PROVER))
+(setf (callers-list 'RENAME-VARIABLES :callers) '(CONVERT-TO-CNF THEOREM-PROVER))
+(setf (callers-list 'SETIFY :callers) '(THEOREM-PROVER))
+(setf (callers-list 'COND :callers) '
+(NUMERIC-RELATION CANDIDATE-ORDERING CONVERT-TO-CNF
+ THEOREM-PROVER))
+(setf (callers-list 'UNIFY-CAND :callers) '(THEOREM-PROVER))
+(setf (callers-list 'FIRST :callers) '
+(SETOFSUPPORT-FILTER SHORTEST-SUM SHORTEST-MIN-CLAUSE
+ CANDIDATE-ORDERING WITHOUT-NOT UNIFY-CAND RESOLVE-CAND
+ GET-CLAUSE-CANDIDATES NEGATIVE-LITERAL GET-PREDICATE-NAME
+ UPDATE-PREDICATE-INDEX CONVERT-TO-CNF THEOREM-PROVER))
+(setf (callers-list 'SECOND :callers) '
+(TAUTOLOGY-FILTER SETOFSUPPORT-FILTER SHORTEST-SUM
+ SHORTEST-MIN-CLAUSE WITHOUT-NOT UNIFY-CAND RESOLVE-CAND
+ GET-CLAUSE-CANDIDATES GET-PREDICATE-NAME
+ UPDATE-PREDICATE-INDEX THEOREM-PROVER))
+(setf (callers-list 'POP :callers) '(THEOREM-PROVER))
+(setf (callers-list 'NULL :callers) '(CANDIDATE-ORDERING THEOREM-PROVER))
+(setf (callers-list 'MAKE-PROOF-RESULT :callers) '(THEOREM-PROVER))
+(setf (callers-list 'RETURN :callers) '(THEOREM-PROVER))
+(setf (callers-list '> :callers) '(NUMERIC-RELATION THEOREM-PROVER))
+(setf (callers-list 'FORCE-OUTPUT :callers) '(THEOREM-PROVER))
+(setf (callers-list 'FORMAT :callers) '(THEOREM-PROVER))
+(setf (callers-list 'MOD :callers) '(THEOREM-PROVER))
+(setf (callers-list '= :callers) '(LITERAL-SET-EQUIVALENCE RESOLVE-CAND THEOREM-PROVER))
+(setf (callers-list 'AND :callers) '(TAUTOLOGY-FILTER LITERAL-SET-EQUIVALENCE THEOREM-PROVER))
+(setf (callers-list 'WHEN :callers) '(CONVERT-TO-CNF THEOREM-PROVER))
+(setf (callers-list 'UPDATE-PREDICATE-INDEX :callers) '(THEOREM-PROVER))
+(setf (callers-list 'MERGE :callers) '(THEOREM-PROVER))
+(setf (callers-list 'CANDIDATE-ORDERING :callers) '(CANDIDATE-ORDERING THEOREM-PROVER))
+(setf (callers-list 'GET-CLAUSE-CANDIDATES :callers) '(THEOREM-PROVER))
+(setf (callers-list 'SORT :callers) '(THEOREM-PROVER))
+(setf (callers-list 'PROOF-NODE-CLAUSE :callers) '
+(UNIQUENESS-FILTER SHORTEST-SUM SHORTEST-MIN-CLAUSE
+ UNIFY-CAND RESOLVE-CAND GET-CLAUSE-CANDIDATES
+ UPDATE-PREDICATE-INDEX THEOREM-PROVER))
+(setf (callers-list 'APPLY-INITIAL-CLAUSE-FILTERS :callers) '(THEOREM-PROVER))
+(setf (callers-list 'APPEND :callers) '(THEOREM-PROVER))
+(setf (callers-list 'MAKE-PROOF-NODE :callers) '(THEOREM-PROVER))
+(setf (callers-list 'QUOTE :callers) '
+(NUMERIC-RELATION WITHOUT-NOT NEGATIVE-LITERAL
+ CONVERT-TO-CNF THEOREM-PROVER))
+(setf (callers-list 'LIST :callers) '
+(TEST2 TEST1 COMPARE-STRATEGIES GET-CLAUSE-CANDIDATES
+ UPDATE-PREDICATE-INDEX CONVERT-TO-CNF THEOREM-PROVER))
+(setf (callers-list 'LET* :callers) '(THEOREM-PROVER))
+(setf (callers-list 'MAKE-HASH-TABLE :callers) '(THEOREM-PROVER))
+(setf (callers-list 'PROOF-RESULT-N-RESOLUTIONS :callers) '(PROVE))
+(setf (callers-list 'PROOF-RESULT-ANSWER :callers) '(PROVE))
+(setf (callers-list 'VALUES :callers) '(PROVE))
+(setf (callers-list 'STRINGP :callers) '(PROVE))
+(setf (callers-list 'IF :callers) '
+(WITHOUT-NOT GET-CLAUSE-CANDIDATES GET-PREDICATE-NAME
+ UPDATE-PREDICATE-INDEX PROVE))
+(setf (callers-list 'THEOREM-PROVER :callers) '(PROVE))
+(setf (callers-list 'REVERSE :callers) '(RESOLVE-CAND READ-AXIOMS))
+(setf (callers-list 'CONJUNCTION :callers) '(READ-AXIOMS))
+(setf (callers-list 'CONVERT-TO-CNF :callers) '(THEOREM-PROVER READ-AXIOMS))
+(setf (callers-list 'STRING->PREFIX :callers) '(PROVE READ-AXIOMS))
+(setf (callers-list 'PUSH :callers) '(THEOREM-PROVER READ-AXIOMS))
+(setf (callers-list 'EQL :callers) '
+(WITHOUT-NOT NEGATIVE-LITERAL CONVERT-TO-CNF THEOREM-PROVER
+ READ-AXIOMS))
+(setf (callers-list 'NOT :callers) '
+(UNIQUENESS-FILTER ELIMINATE-DUPLICATES RESOLVE-CAND
+ THEOREM-PROVER READ-AXIOMS))
+(setf (callers-list 'LOOP :callers) '
+(COMPARE-STRATEGIES APPLY-INITIAL-CLAUSE-FILTERS
+ TAUTOLOGY-FILTER APPLY-CLAUSE-FILTERS
+ APPLY-CANDIDATE-FILTERS ELIMINATE-DUPLICATES RESOLVE-CAND
+ GET-CLAUSE-CANDIDATES UPDATE-PREDICATE-INDEX
+ CONVERT-TO-CNF SETIFY THEOREM-PROVER READ-AXIOMS))
+(setf (callers-list 'READ-LINE :callers) '(READ-AXIOMS))
+(setf (callers-list 'SETF :callers) '
+(UPDATE-PREDICATE-INDEX CONVERT-TO-CNF SETIFY
+ THEOREM-PROVER READ-AXIOMS))
+(setf (callers-list 'WITH-OPEN-FILE :callers) '(READ-AXIOMS))
+(setf (callers-list 'LET :callers) '
+(COMPARE-STRATEGIES SHORTEST-SUM SHORTEST-MIN-CLAUSE
+ RESOLVE-CAND CONVERT-TO-CNF SETIFY PROVE READ-AXIOMS))
+(setf (callers-list 'TEST2 :callees) '(LIST COMPARE-STRATEGIES READ-AXIOMS))
+(setf (callers-list 'TEST1 :callees) '(LIST COMPARE-STRATEGIES READ-AXIOMS))
+(setf (callers-list 'COMPARE-STRATEGIES :callees) '(PRINT PROVE MULTIPLE-VALUE-LIST LET LIST LOOP))
+(setf (callers-list 'APPLY-INITIAL-CLAUSE-FILTERS :callees) '(FILTER FUNCALL LOOP RESOLUTION-INITIAL-CLAUSE-FILTERS))
+(setf (callers-list 'TAUTOLOGY-FILTER :callees) '(EQUALP FUNCTION SECOND MEMBER NEGATIVE-LITERAL AND LOOP))
+(setf (callers-list 'LITERAL-SET-EQUIVALENCE :callees) '(RENAMING? FUNCTION SUBSETP LENGTH = AND))
+(setf (callers-list 'UNIQUENESS-FILTER :callees) '
+(LITERAL-SET-EQUIVALENCE PROOF-NODE-CLAUSE FUNCTION MEMBER
+ NOT))
+(setf (callers-list 'APPLY-CLAUSE-FILTERS :callees) '(FILTER FUNCALL LOOP RESOLUTION-CLAUSE-FILTERS))
+(setf (callers-list 'SETOFSUPPORT-FILTER :callees) '(SECOND FIRST PROOF-NODE-SETOFSUPPORT OR))
+(setf (callers-list 'APPLY-CANDIDATE-FILTERS :callees) '(FILTER FUNCALL LOOP RESOLUTION-CANDIDATE-FILTERS))
+(setf (callers-list 'SHORTEST-SUM :callees) '
+(NUMERIC-RELATION SECOND FIRST PROOF-NODE-CLAUSE LENGTH +
+ LET))
+(setf (callers-list 'NUMERIC-RELATION :callees) '(> QUOTE < COND))
+(setf (callers-list 'SHORTEST-MIN-CLAUSE :callees) '
+(NUMERIC-RELATION SECOND FIRST PROOF-NODE-CLAUSE LENGTH MIN
+ LET))
+(setf (callers-list 'CANDIDATE-ORDERING :callees) '
+(REST CANDIDATE-ORDERING FIRST FUNCALL CASE NULL COND
+ RESOLUTION-CANDIDATE-ORDERING-STRATEGIES))
+(setf (callers-list 'ELIMINATE-DUPLICATES :callees) '(EQUALP FUNCTION REST MEMBER NOT LOOP))
+(setf (callers-list 'WITHOUT-NOT :callees) '(SECOND QUOTE FIRST EQL IF))
+(setf (callers-list 'UNIFY-CAND :callees) '(PROOF-NODE-CLAUSE FIRST SECOND NTH WITHOUT-NOT UNIFY))
+(setf (callers-list 'RESOLVE-CAND :callees) '
+(REVERSE EQUALP FUNCTION COPY-TREE PUSHNEW SECOND = NOT
+ FIRST PROOF-NODE-CLAUSE LOOP LET))
+(setf (callers-list 'GET-CLAUSE-CANDIDATES :callees) '
+(APPLY-CANDIDATE-FILTERS SECOND FIRST NEGATIVE-LITERAL IF
+ LIST GETHASH OR GET-PREDICATE-NAME PROOF-NODE-CLAUSE LOOP))
+(setf (callers-list 'NEGATIVE-LITERAL :callees) '(QUOTE FIRST EQL))
+(setf (callers-list 'GET-PREDICATE-NAME :callees) '(SECOND FIRST NEGATIVE-LITERAL IF))
+(setf (callers-list 'UPDATE-PREDICATE-INDEX :callees) '
+(FIRST CONS SECOND SETF NEGATIVE-LITERAL IF LIST GETHASH OR
+ GET-PREDICATE-NAME PROOF-NODE-CLAUSE LOOP))
+(setf (callers-list 'CONVERT-TO-CNF :callees) '
+(RENAME-VARIABLES TAUTOLOGY-FILTER LOOP WHEN REST QUOTE
+ FIRST EQL LIST SETF LITERAL-CLAUSE? COND ->CNF LET))
+(setf (callers-list 'SETIFY :callees) '(ADJOIN SETF LOOP LET IDENTITY EQUALP FUNCTION))
+(setf (callers-list 'THEOREM-PROVER :callees) '
+(PUSH PROOF-NODE-DEPTH MAX 1+ PROOF-NODE-SETOFSUPPORT OR
+ APPLY-CLAUSE-FILTERS RESOLVE-CAND SUBST-BINDINGS
+ RENAME-VARIABLES SETIFY EQL NOT COND UNIFY-CAND FIRST
+ SECOND POP NULL MAKE-PROOF-RESULT RETURN > FORCE-OUTPUT
+ FORMAT MOD = AND WHEN UPDATE-PREDICATE-INDEX MERGE
+ CANDIDATE-ORDERING GET-CLAUSE-CANDIDATES SORT
+ PROOF-NODE-CLAUSE APPLY-INITIAL-CLAUSE-FILTERS APPEND
+ MAKE-PROOF-NODE LOOP QUOTE LIST CONVERT-TO-CNF LET*
+ MAKE-HASH-TABLE SETF))
+(setf (callers-list 'PROVE :callees) '
+(PROOF-RESULT-N-RESOLUTIONS PROOF-RESULT-ANSWER VALUES
+ STRING->PREFIX STRINGP IF THEOREM-PROVER LET))
+(setf (callers-list 'READ-AXIOMS :callees) '
+(REVERSE CONJUNCTION CONVERT-TO-CNF STRING->PREFIX PUSH EQL
+ NOT LOOP READ-LINE SETF WITH-OPEN-FILE LET))
+(setf (callers-list '*SHORTEST-MIN-CLAUSE-STRATEGY* :readers) '(TEST2 TEST1))
+(setf (callers-list '*SHORTEST-MIN-SHORTEST-SUM-STRATEGY* :readers) '(TEST2 TEST1))
+(setf (callers-list '*DEFAULT-RESOLUTION-STRATEGY* :readers) '(TEST2 TEST1))
+(setf (callers-list 'STRATEGY :readers) '(COMPARE-STRATEGIES))
+(setf (callers-list 'NEVER :readers) '(TAUTOLOGY-FILTER))
+(setf (callers-list 'ALWAYS :readers) '
+(APPLY-INITIAL-CLAUSE-FILTERS APPLY-CLAUSE-FILTERS
+ APPLY-CANDIDATE-FILTERS))
+(setf (callers-list 'FILTER :readers) '
+(APPLY-INITIAL-CLAUSE-FILTERS APPLY-CLAUSE-FILTERS
+ APPLY-CANDIDATE-FILTERS))
+(setf (callers-list '*CURRENT-RESOLUTION-STRATEGY* :readers) '
+(APPLY-INITIAL-CLAUSE-FILTERS APPLY-CLAUSE-FILTERS
+ APPLY-CANDIDATE-FILTERS CANDIDATE-ORDERING))
+(setf (callers-list 'ON :readers) '(ELIMINATE-DUPLICATES))
+(setf (callers-list 'TAIL :readers) '(ELIMINATE-DUPLICATES))
+(setf (callers-list 'INDEX :readers) '(RESOLVE-CAND))
+(setf (callers-list 'RES :readers) '(COMPARE-STRATEGIES RESOLVE-CAND))
+(setf (callers-list 'APPEND :readers) '(GET-CLAUSE-CANDIDATES))
+(setf (callers-list 'CLAUSES :readers) '(GET-CLAUSE-CANDIDATES))
+(setf (callers-list 'INDEX1 :readers) '(GET-CLAUSE-CANDIDATES))
+(setf (callers-list 'LITERAL1 :readers) '(GET-CLAUSE-CANDIDATES))
+(setf (callers-list 'HASH-ENTRY :readers) '(GET-CLAUSE-CANDIDATES UPDATE-PREDICATE-INDEX))
+(setf (callers-list 'PREDICATE-NAME :readers) '(GET-CLAUSE-CANDIDATES UPDATE-PREDICATE-INDEX))
+(setf (callers-list 'LITERAL-INDEX :readers) '(GET-CLAUSE-CANDIDATES UPDATE-PREDICATE-INDEX))
+(setf (callers-list 'LITERAL :readers) '
+(TAUTOLOGY-FILTER ELIMINATE-DUPLICATES RESOLVE-CAND
+ UPDATE-PREDICATE-INDEX))
+(setf (callers-list 'CLAUSE :readers) '(CONVERT-TO-CNF))
+(setf (callers-list 'EL :readers) '(SETIFY))
+(setf (callers-list '+FAIL+ :readers) '(THEOREM-PROVER))
+(setf (callers-list '*TRACE-PROVER* :readers) '(THEOREM-PROVER))
+(setf (callers-list '*RESOURCE-LIMIT* :readers) '(THEOREM-PROVER))
+(setf (callers-list '*SHOW-PROGRESS* :readers) '(THEOREM-PROVER))
+(setf (callers-list 'NEW-CLAUSE :readers) '(THEOREM-PROVER))
+(setf (callers-list 'CAND :readers) '(GET-CLAUSE-CANDIDATES THEOREM-PROVER))
+(setf (callers-list 'BINDING :readers) '(THEOREM-PROVER))
+(setf (callers-list 'RESOLVANT :readers) '(THEOREM-PROVER))
+(setf (callers-list 'WITH :readers) '(THEOREM-PROVER))
+(setf (callers-list 'FROM :readers) '
+(RESOLVE-CAND GET-CLAUSE-CANDIDATES UPDATE-PREDICATE-INDEX
+ THEOREM-PROVER))
+(setf (callers-list 'N-RESOLUTIONS :readers) '(THEOREM-PROVER))
+(setf (callers-list '= :readers) '
+(COMPARE-STRATEGIES GET-CLAUSE-CANDIDATES
+ UPDATE-PREDICATE-INDEX THEOREM-PROVER))
+(setf (callers-list 'NEW-CANDIDATES :readers) '(THEOREM-PROVER))
+(setf (callers-list 'PROOF-NODE :readers) '(THEOREM-PROVER))
+(setf (callers-list 'WHEN :readers) '
+(ELIMINATE-DUPLICATES RESOLVE-CAND GET-CLAUSE-CANDIDATES
+ CONVERT-TO-CNF THEOREM-PROVER))
+(setf (callers-list 'NODE :readers) '(THEOREM-PROVER))
+(setf (callers-list 'COLLECT :readers) '
+(COMPARE-STRATEGIES ELIMINATE-DUPLICATES
+ GET-CLAUSE-CANDIDATES CONVERT-TO-CNF THEOREM-PROVER))
+(setf (callers-list 'IN :readers) '
+(COMPARE-STRATEGIES APPLY-INITIAL-CLAUSE-FILTERS
+ TAUTOLOGY-FILTER APPLY-CLAUSE-FILTERS
+ APPLY-CANDIDATE-FILTERS ELIMINATE-DUPLICATES RESOLVE-CAND
+ GET-CLAUSE-CANDIDATES UPDATE-PREDICATE-INDEX
+ CONVERT-TO-CNF SETIFY THEOREM-PROVER))
+(setf (callers-list 'C :readers) '(CONVERT-TO-CNF THEOREM-PROVER))
+(setf (callers-list 'FOR :readers) '
+(COMPARE-STRATEGIES APPLY-INITIAL-CLAUSE-FILTERS
+ TAUTOLOGY-FILTER APPLY-CLAUSE-FILTERS
+ APPLY-CANDIDATE-FILTERS ELIMINATE-DUPLICATES RESOLVE-CAND
+ GET-CLAUSE-CANDIDATES UPDATE-PREDICATE-INDEX
+ CONVERT-TO-CNF SETIFY THEOREM-PROVER))
+(setf (callers-list '*RENAMING-TABLE* :readers) '(THEOREM-PROVER))
+(setf (callers-list '*AXIOMS* :readers) '(COMPARE-STRATEGIES PROVE READ-AXIOMS))
+(setf (callers-list 'DO :readers) '
+(RESOLVE-CAND UPDATE-PREDICATE-INDEX SETIFY THEOREM-PROVER
+ READ-AXIOMS))
+(setf (callers-list 'WHILE :readers) '(READ-AXIOMS))
+(setf (callers-list '*CURRENT-RESOLUTION-STRATEGY* :setters) '(COMPARE-STRATEGIES))
+(setf (callers-list 'NODES :setters) '(TRIVIAL-CLAUSE-FILTER))
+(setf (callers-list 'SET2 :setters) '(LITERAL-SET-EQUIVALENCE))
+(setf (callers-list 'SET1 :setters) '(LITERAL-SET-EQUIVALENCE))
+(setf (callers-list 'FILTERS :setters) '
+(APPLY-INITIAL-CLAUSE-FILTERS APPLY-CLAUSE-FILTERS
+ APPLY-CANDIDATE-FILTERS))
+(setf (callers-list 'SUM2 :setters) '(SHORTEST-SUM))
+(setf (callers-list 'SUM1 :setters) '(SHORTEST-SUM))
+(setf (callers-list 'N2 :setters) '(NUMERIC-RELATION))
+(setf (callers-list 'N1 :setters) '(NUMERIC-RELATION))
+(setf (callers-list 'MIN2 :setters) '(SHORTEST-MIN-CLAUSE))
+(setf (callers-list 'MIN1 :setters) '(SHORTEST-MIN-CLAUSE))
+(setf (callers-list 'STRATEGIES :setters) '(COMPARE-STRATEGIES CANDIDATE-ORDERING))
+(setf (callers-list 'CAND2 :setters) '
+(TRIVIAL-ORDERING SHORTEST-SUM SHORTEST-MIN-CLAUSE
+ CANDIDATE-ORDERING))
+(setf (callers-list 'CAND1 :setters) '
+(TRIVIAL-ORDERING SHORTEST-SUM SHORTEST-MIN-CLAUSE
+ CANDIDATE-ORDERING))
+(setf (callers-list 'CLAUSE :setters) '
+(APPLY-INITIAL-CLAUSE-FILTERS TRIVIAL-CLAUSE-FILTER
+ TAUTOLOGY-FILTER UNIQUENESS-FILTER APPLY-CLAUSE-FILTERS
+ ELIMINATE-DUPLICATES))
+(setf (callers-list 'EXP :setters) '(WITHOUT-NOT))
+(setf (callers-list 'NEW-CLAUSE :setters) '(RESOLVE-CAND))
+(setf (callers-list 'CAND :setters) '
+(TRIVIAL-CANDIDATE-FILTER SETOFSUPPORT-FILTER
+ APPLY-CANDIDATE-FILTERS UNIFY-CAND RESOLVE-CAND))
+(setf (callers-list 'LITERAL :setters) '(NEGATIVE-LITERAL GET-PREDICATE-NAME))
+(setf (callers-list 'INDEX :setters) '(UPDATE-PREDICATE-INDEX))
+(setf (callers-list 'CLAUSE-NODE :setters) '(GET-CLAUSE-CANDIDATES UPDATE-PREDICATE-INDEX))
+(setf (callers-list 'CLAUSES :setters) '(CONVERT-TO-CNF))
+(setf (callers-list 'CNF :setters) '(CONVERT-TO-CNF))
+(setf (callers-list 'P :setters) '(CONVERT-TO-CNF))
+(setf (callers-list 'NEW-SET :setters) '(SETIFY))
+(setf (callers-list 'KEY :setters) '(SETIFY))
+(setf (callers-list 'TEST :setters) '(SETIFY))
+(setf (callers-list 'LIST :setters) '(SETIFY))
+(setf (callers-list 'CANDIDATES :setters) '(THEOREM-PROVER))
+(setf (callers-list 'PREDICATE-INDEX :setters) '(GET-CLAUSE-CANDIDATES THEOREM-PROVER))
+(setf (callers-list 'PROOF-NODES :setters) '
+(APPLY-INITIAL-CLAUSE-FILTERS TAUTOLOGY-FILTER
+ UNIQUENESS-FILTER APPLY-CLAUSE-FILTERS THEOREM-PROVER))
+(setf (callers-list 'AXIOM-NODES :setters) '(THEOREM-PROVER))
+(setf (callers-list 'THEOREM-NODES :setters) '(THEOREM-PROVER))
+(setf (callers-list 'THEOREM-CLAUSES :setters) '(THEOREM-PROVER))
+(setf (callers-list 'AXIOM-CLAUSES :setters) '(THEOREM-PROVER))
+(setf (callers-list 'RESULT :setters) '(PROVE))
+(setf (callers-list 'THEOREM :setters) '(COMPARE-STRATEGIES THEOREM-PROVER PROVE))
+(setf (callers-list 'F :setters) '(READ-AXIOMS))
+(setf (callers-list 'NEW-LINE :setters) '(READ-AXIOMS))
+(setf (callers-list 'AXIOMS :setters) '(COMPARE-STRATEGIES PROVE READ-AXIOMS))
+(setf (callers-list 'FILE :setters) '(READ-AXIOMS))

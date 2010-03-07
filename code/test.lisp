@@ -16,14 +16,15 @@
 		  ((~ M) (C)))
 	       '((~ D))))
 
-(Defun Test2 ()
+(in-package "testprover")
+(Defun ttest2 ()
   (ProveDriver '( ((mother amity betsy))
 		  ((~ daughter ?u ?w) (mother ?w ?u))
 		  ((daughter cindy betsy))
 		  ((~ mother ?x ?y) (~ mother ?y ?z) (grandmother ?x ?z)))
 	       '((~ grandmother ?g cindy))))
 
-(Defun Test3()
+(Defun ttest3()
   (ProveDriver '( ((man marcus))
 		  ((prompeian marcus))
 		  ((~ prompeian ?x) (roman ?x))
@@ -33,7 +34,7 @@
 	                ((trytoassassinate marcus caesar)))
 	       '((~ hate marcus caesar))))
 
-(Defun Test4()
+(Defun ttest4()
   (ProveDriver '( ((B ?x) (~ C ?x) (D ?x))
                   ((C ?x) (~ E ?x))
                   ((C ?x) (~ F ?x))
@@ -45,7 +46,7 @@
                   ((H Helen)))
   '((~ A Helen) )))
 
-(Defun Test5()
+(Defun ttest5()
 	 (ProveDriver '( ((dog d))
 			 ((owns jack d))
 			 ((~ dog ?x) (~ owns ?x ?y) (animallover ?x))
