@@ -1,0 +1,4 @@
+(load "psgraph.lisp")
+(load "xref.lisp")
+(load "testprover.lisp")
+(xref:xref-files "testprover.lisp" "test.lisp")

@@ -1,0 +1,7 @@
+(load "psgraph.lisp")
+(load "xref.lisp")
+(load "infix")
+(load "unify")
+(load "cnf")
+(load "fancyprover")
+(xref:xref-files "infix.lisp" "unify.lisp" "cnf.lisp" "fancyprover.lisp")
