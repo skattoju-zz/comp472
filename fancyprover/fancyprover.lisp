@@ -154,7 +154,7 @@
     )
 
 
-(defparameter *resource-limit* 1000
+(defparameter *resource-limit* 10000000
     "The maximum number of resolutions allowed for proving one theorem")
 
 (defvar *trace-prover* t
@@ -698,6 +698,14 @@
 
 (defun ctest3 ()
   (read-axioms "test3.lgc")
+  (compare-strategies (list *default-resolution-strategy*
+		            *shortest-min-shortest-sum-strategy*
+			    *shortest-min-clause-strategy*
+			    )
+		      "kills(cat,curiosity)"))
+
+(defun ctest4 ()
+  (read-axioms "test4.lgc")
   (compare-strategies (list *default-resolution-strategy*
 		            *shortest-min-shortest-sum-strategy*
 			    *shortest-min-clause-strategy*

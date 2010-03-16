@@ -1,0 +1,428 @@
+;; Dribble of #<IO TERMINAL-STREAM> started 2010-03-07 13:29:04
+#<OUTPUT BUFFERED FILE-STREAM CHARACTER #P"output.txt">
+[6]> (ctest1)
+
+Trying to unify: 
+    Literal 0 of ((NOT (MOTHER SARA YZHAK))) 
+    Literal 0 of ((MOTHER ?@_44 ?@_45) (NOT (PARENT ?@_44 ?@_45)) (FATHER ?@_44 ?@_45))
+    Unification result: ((?@_45 . YZHAK) (?@_44 . SARA))
+    New Clause:((FATHER SARA YZHAK) (NOT (PARENT SARA YZHAK)))
+Trying to unify: 
+    Literal 1 of ((FATHER SARA YZHAK) (NOT (PARENT SARA YZHAK))) 
+    Literal 0 of ((PARENT AVRAHAM YZHAK))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 1 of ((FATHER SARA YZHAK) (NOT (PARENT SARA YZHAK))) 
+    Literal 0 of ((PARENT SARA YZHAK))
+    Unification result: ((NIL))
+    New Clause:((FATHER SARA YZHAK))
+Trying to unify: 
+    Literal 0 of ((FATHER SARA YZHAK)) 
+    Literal 1 of ((PARENT ?@_40 ?@_41) (NOT (FATHER ?@_40 ?@_41)))
+    Unification result: ((?@_41 . YZHAK) (?@_40 . SARA))
+    Clause ((PARENT SARA YZHAK)) was filtered out.
+Trying to unify: 
+    Literal 0 of ((FATHER SARA YZHAK)) 
+    Literal 1 of ((MALE ?@_42) (NOT (FATHER ?@_42 ?@_43)))
+    Unification result: ((?@_43 . YZHAK) (?@_42 . SARA))
+    New Clause:((MALE SARA))
+Trying to unify: 
+    Literal 0 of ((MALE SARA)) 
+    Literal 0 of ((NOT (MALE ?@_36)) (NOT (FEMALE ?@_36)))
+    Unification result: ((?@_36 . SARA))
+    New Clause:((NOT (FEMALE SARA)))
+Trying to unify: 
+    Literal 0 of ((NOT (FEMALE SARA))) 
+    Literal 0 of ((FEMALE SARA))
+    Unification result: ((NIL))
+    New Clause:NIL
+(#S(RESOLUTION
+    :CANDIDATE-ORDERING-STRATEGIES (SHORTEST-MIN-CLAUSE SHORTEST-SUM)
+    :CANDIDATE-FILTERS (SETOFSUPPORT-FILTER)
+    :CLAUSE-FILTERS (TAUTOLOGY-FILTER UNIQUENESS-FILTER)
+    :INITIAL-CLAUSE-FILTERS (TRIVIAL-CLAUSE-FILTER))
+ (T 7)) 
+Trying to unify: 
+    Literal 1 of ((NOT (MALE ?@_36)) (NOT (FEMALE ?@_36))) 
+    Literal 0 of ((FEMALE SARA))
+    Unification result: ((?@_36 . SARA))
+    New Clause:((NOT (MALE SARA)))
+Trying to unify: 
+    Literal 0 of ((NOT (MALE SARA))) 
+    Literal 0 of ((MALE AVRAHAM))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 0 of ((NOT (MALE ?@_36)) (NOT (FEMALE ?@_36))) 
+    Literal 0 of ((MALE AVRAHAM))
+    Unification result: ((?@_36 . AVRAHAM))
+    New Clause:((NOT (FEMALE AVRAHAM)))
+Trying to unify: 
+    Literal 0 of ((NOT (FEMALE AVRAHAM))) 
+    Literal 0 of ((FEMALE SARA))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 0 of ((NOT (MALE SARA))) 
+    Literal 1 of ((FEMALE ?@_37) (MALE ?@_37))
+    Unification result: ((?@_37 . SARA))
+    Clause ((FEMALE SARA)) was filtered out.
+Trying to unify: 
+    Literal 0 of ((NOT (MALE SARA))) 
+    Literal 0 of ((MALE ?@_42) (NOT (FATHER ?@_42 ?@_43)))
+    Unification result: ((?@_42 . SARA))
+    New Clause:((NOT (FATHER SARA ?@_47)))
+Trying to unify: 
+    Literal 0 of ((NOT (FEMALE AVRAHAM))) 
+    Literal 0 of ((FEMALE ?@_37) (MALE ?@_37))
+    Unification result: ((?@_37 . AVRAHAM))
+    Clause ((MALE AVRAHAM)) was filtered out.
+Trying to unify: 
+    Literal 0 of ((NOT (FEMALE AVRAHAM))) 
+    Literal 0 of ((FEMALE ?@_46) (NOT (MOTHER ?@_46 ($?Y_35 ?@_46))))
+    Unification result: ((?@_46 . AVRAHAM))
+    New Clause:((NOT (MOTHER AVRAHAM ($?Y_35 AVRAHAM))))
+Trying to unify: 
+    Literal 2 of ((FATHER ?@_39 ?@_38) (NOT (PARENT ?@_39 ?@_38)) (NOT (MALE ?@_39))) 
+    Literal 0 of ((MALE AVRAHAM))
+    Unification result: ((?@_39 . AVRAHAM))
+    New Clause:((NOT (PARENT AVRAHAM ?@_48)) (FATHER AVRAHAM ?@_48))
+Trying to unify: 
+    Literal 1 of ((NOT (PARENT AVRAHAM ?@_48)) (FATHER AVRAHAM ?@_48)) 
+    Literal 0 of ((NOT (FATHER SARA ?@_47)))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 0 of ((NOT (PARENT AVRAHAM ?@_48)) (FATHER AVRAHAM ?@_48)) 
+    Literal 0 of ((PARENT AVRAHAM YZHAK))
+    Unification result: ((?@_48 . YZHAK))
+    New Clause:((FATHER AVRAHAM YZHAK))
+Trying to unify: 
+    Literal 0 of ((FATHER AVRAHAM YZHAK)) 
+    Literal 0 of ((NOT (FATHER SARA ?@_47)))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 0 of ((NOT (PARENT AVRAHAM ?@_48)) (FATHER AVRAHAM ?@_48)) 
+    Literal 0 of ((PARENT SARA YZHAK))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 0 of ((FATHER AVRAHAM YZHAK)) 
+    Literal 1 of ((PARENT ?@_40 ?@_41) (NOT (FATHER ?@_40 ?@_41)))
+    Unification result: ((?@_41 . YZHAK) (?@_40 . AVRAHAM))
+    Clause ((PARENT AVRAHAM YZHAK)) was filtered out.
+Trying to unify: 
+    Literal 0 of ((FATHER AVRAHAM YZHAK)) 
+    Literal 1 of ((MALE ?@_42) (NOT (FATHER ?@_42 ?@_43)))
+    Unification result: ((?@_43 . YZHAK) (?@_42 . AVRAHAM))
+    Clause ((MALE AVRAHAM)) was filtered out.
+Trying to unify: 
+    Literal 1 of ((FATHER ?@_39 ?@_38) (NOT (PARENT ?@_39 ?@_38)) (NOT (MALE ?@_39))) 
+    Literal 0 of ((PARENT AVRAHAM YZHAK))
+    Unification result: ((?@_38 . YZHAK) (?@_39 . AVRAHAM))
+    New Clause:((NOT (MALE AVRAHAM)) (FATHER AVRAHAM YZHAK))
+Trying to unify: 
+    Literal 1 of ((NOT (MALE AVRAHAM)) (FATHER AVRAHAM YZHAK)) 
+    Literal 0 of ((NOT (FATHER SARA ?@_47)))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 0 of ((NOT (MALE AVRAHAM)) (FATHER AVRAHAM YZHAK)) 
+    Literal 0 of ((MALE AVRAHAM))
+    Unification result: ((NIL))
+    Clause ((FATHER AVRAHAM YZHAK)) was filtered out.
+Trying to unify: 
+    Literal 1 of ((FATHER ?@_39 ?@_38) (NOT (PARENT ?@_39 ?@_38)) (NOT (MALE ?@_39))) 
+    Literal 0 of ((PARENT SARA YZHAK))
+    Unification result: ((?@_38 . YZHAK) (?@_39 . SARA))
+    New Clause:((NOT (MALE SARA)) (FATHER SARA YZHAK))
+Trying to unify: 
+    Literal 1 of ((NOT (MALE SARA)) (FATHER SARA YZHAK)) 
+    Literal 0 of ((NOT (FATHER SARA ?@_47)))
+    Unification result: ((?@_47 . YZHAK))
+    Clause ((NOT (MALE SARA))) was filtered out.
+Trying to unify: 
+    Literal 0 of ((NOT (MALE SARA)) (FATHER SARA YZHAK)) 
+    Literal 0 of ((MALE AVRAHAM))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 1 of ((MOTHER ?@_44 ?@_45) (NOT (PARENT ?@_44 ?@_45)) (FATHER ?@_44 ?@_45)) 
+    Literal 0 of ((PARENT AVRAHAM YZHAK))
+    Unification result: ((?@_45 . YZHAK) (?@_44 . AVRAHAM))
+    New Clause:((FATHER AVRAHAM YZHAK) (MOTHER AVRAHAM YZHAK))
+Trying to unify: 
+    Literal 1 of ((FATHER AVRAHAM YZHAK) (MOTHER AVRAHAM YZHAK)) 
+    Literal 0 of ((NOT (MOTHER SARA YZHAK)))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 1 of ((FATHER AVRAHAM YZHAK) (MOTHER AVRAHAM YZHAK)) 
+    Literal 0 of ((NOT (MOTHER AVRAHAM ($?Y_35 AVRAHAM))))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 0 of ((FATHER AVRAHAM YZHAK) (MOTHER AVRAHAM YZHAK)) 
+    Literal 0 of ((NOT (FATHER SARA ?@_47)))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 1 of ((MOTHER ?@_44 ?@_45) (NOT (PARENT ?@_44 ?@_45)) (FATHER ?@_44 ?@_45)) 
+    Literal 0 of ((PARENT SARA YZHAK))
+    Unification result: ((?@_45 . YZHAK) (?@_44 . SARA))
+    New Clause:((FATHER SARA YZHAK) (MOTHER SARA YZHAK))
+Trying to unify: 
+    Literal 1 of ((FATHER SARA YZHAK) (MOTHER SARA YZHAK)) 
+    Literal 0 of ((NOT (MOTHER SARA YZHAK)))
+    Unification result: ((NIL))
+    New Clause:((FATHER SARA YZHAK))
+Trying to unify: 
+    Literal 0 of ((FATHER SARA YZHAK)) 
+    Literal 0 of ((NOT (FATHER SARA ?@_47)))
+    Unification result: ((?@_47 . YZHAK))
+    New Clause:NIL
+(#S(RESOLUTION
+    :CANDIDATE-ORDERING-STRATEGIES (SHORTEST-MIN-CLAUSE SHORTEST-SUM)
+    :CANDIDATE-FILTERS (TRIVIAL-CANDIDATE-FILTER)
+    :CLAUSE-FILTERS (TAUTOLOGY-FILTER UNIQUENESS-FILTER)
+    :INITIAL-CLAUSE-FILTERS (TRIVIAL-CLAUSE-FILTER))
+ (T 28)) 
+Trying to unify: 
+    Literal 1 of ((NOT (MALE ?@_36)) (NOT (FEMALE ?@_36))) 
+    Literal 0 of ((FEMALE SARA))
+    Unification result: ((?@_36 . SARA))
+    New Clause:((NOT (MALE SARA)))
+Trying to unify: 
+    Literal 0 of ((NOT (MALE ?@_36)) (NOT (FEMALE ?@_36))) 
+    Literal 0 of ((MALE AVRAHAM))
+    Unification result: ((?@_36 . AVRAHAM))
+    New Clause:((NOT (FEMALE AVRAHAM)))
+Trying to unify: 
+    Literal 2 of ((FATHER ?@_39 ?@_38) (NOT (PARENT ?@_39 ?@_38)) (NOT (MALE ?@_39))) 
+    Literal 0 of ((MALE AVRAHAM))
+    Unification result: ((?@_39 . AVRAHAM))
+    New Clause:((NOT (PARENT AVRAHAM ?@_49)) (FATHER AVRAHAM ?@_49))
+Trying to unify: 
+    Literal 1 of ((FATHER ?@_39 ?@_38) (NOT (PARENT ?@_39 ?@_38)) (NOT (MALE ?@_39))) 
+    Literal 0 of ((PARENT AVRAHAM YZHAK))
+    Unification result: ((?@_38 . YZHAK) (?@_39 . AVRAHAM))
+    New Clause:((NOT (MALE AVRAHAM)) (FATHER AVRAHAM YZHAK))
+Trying to unify: 
+    Literal 1 of ((FATHER ?@_39 ?@_38) (NOT (PARENT ?@_39 ?@_38)) (NOT (MALE ?@_39))) 
+    Literal 0 of ((PARENT SARA YZHAK))
+    Unification result: ((?@_38 . YZHAK) (?@_39 . SARA))
+    New Clause:((NOT (MALE SARA)) (FATHER SARA YZHAK))
+Trying to unify: 
+    Literal 1 of ((MOTHER ?@_44 ?@_45) (NOT (PARENT ?@_44 ?@_45)) (FATHER ?@_44 ?@_45)) 
+    Literal 0 of ((PARENT AVRAHAM YZHAK))
+    Unification result: ((?@_45 . YZHAK) (?@_44 . AVRAHAM))
+    New Clause:((FATHER AVRAHAM YZHAK) (MOTHER AVRAHAM YZHAK))
+Trying to unify: 
+    Literal 1 of ((MOTHER ?@_44 ?@_45) (NOT (PARENT ?@_44 ?@_45)) (FATHER ?@_44 ?@_45)) 
+    Literal 0 of ((PARENT SARA YZHAK))
+    Unification result: ((?@_45 . YZHAK) (?@_44 . SARA))
+    New Clause:((FATHER SARA YZHAK) (MOTHER SARA YZHAK))
+Trying to unify: 
+    Literal 0 of ((NOT (MOTHER SARA YZHAK))) 
+    Literal 0 of ((MOTHER ?@_44 ?@_45) (NOT (PARENT ?@_44 ?@_45)) (FATHER ?@_44 ?@_45))
+    Unification result: ((?@_45 . YZHAK) (?@_44 . SARA))
+    New Clause:((FATHER SARA YZHAK) (NOT (PARENT SARA YZHAK)))
+Trying to unify: 
+    Literal 0 of ((NOT (MALE SARA))) 
+    Literal 0 of ((MALE AVRAHAM))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 0 of ((NOT (MALE SARA))) 
+    Literal 1 of ((FEMALE ?@_37) (MALE ?@_37))
+    Unification result: ((?@_37 . SARA))
+    Clause ((FEMALE SARA)) was filtered out.
+Trying to unify: 
+    Literal 0 of ((NOT (MALE SARA))) 
+    Literal 0 of ((MALE ?@_42) (NOT (FATHER ?@_42 ?@_43)))
+    Unification result: ((?@_42 . SARA))
+    New Clause:((NOT (FATHER SARA ?@_50)))
+Trying to unify: 
+    Literal 0 of ((NOT (FEMALE AVRAHAM))) 
+    Literal 0 of ((FEMALE SARA))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 0 of ((NOT (FEMALE AVRAHAM))) 
+    Literal 0 of ((FEMALE ?@_37) (MALE ?@_37))
+    Unification result: ((?@_37 . AVRAHAM))
+    Clause ((MALE AVRAHAM)) was filtered out.
+Trying to unify: 
+    Literal 0 of ((NOT (FEMALE AVRAHAM))) 
+    Literal 0 of ((FEMALE ?@_46) (NOT (MOTHER ?@_46 ($?Y_35 ?@_46))))
+    Unification result: ((?@_46 . AVRAHAM))
+    New Clause:((NOT (MOTHER AVRAHAM ($?Y_35 AVRAHAM))))
+Trying to unify: 
+    Literal 0 of ((NOT (PARENT AVRAHAM ?@_49)) (FATHER AVRAHAM ?@_49)) 
+    Literal 0 of ((PARENT AVRAHAM YZHAK))
+    Unification result: ((?@_49 . YZHAK))
+    New Clause:((FATHER AVRAHAM YZHAK))
+Trying to unify: 
+    Literal 0 of ((NOT (PARENT AVRAHAM ?@_49)) (FATHER AVRAHAM ?@_49)) 
+    Literal 0 of ((PARENT SARA YZHAK))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 0 of ((NOT (MALE AVRAHAM)) (FATHER AVRAHAM YZHAK)) 
+    Literal 0 of ((MALE AVRAHAM))
+    Unification result: ((NIL))
+    Clause ((FATHER AVRAHAM YZHAK)) was filtered out.
+Trying to unify: 
+    Literal 0 of ((NOT (MALE SARA)) (FATHER SARA YZHAK)) 
+    Literal 0 of ((MALE AVRAHAM))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 1 of ((FATHER AVRAHAM YZHAK) (MOTHER AVRAHAM YZHAK)) 
+    Literal 0 of ((NOT (MOTHER SARA YZHAK)))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 1 of ((FATHER SARA YZHAK) (MOTHER SARA YZHAK)) 
+    Literal 0 of ((NOT (MOTHER SARA YZHAK)))
+    Unification result: ((NIL))
+    New Clause:((FATHER SARA YZHAK))
+Trying to unify: 
+    Literal 1 of ((FATHER SARA YZHAK) (NOT (PARENT SARA YZHAK))) 
+    Literal 0 of ((PARENT AVRAHAM YZHAK))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 1 of ((FATHER SARA YZHAK) (NOT (PARENT SARA YZHAK))) 
+    Literal 0 of ((PARENT SARA YZHAK))
+    Unification result: ((NIL))
+    Clause ((FATHER SARA YZHAK)) was filtered out.
+Trying to unify: 
+    Literal 0 of ((NOT (FATHER SARA ?@_50))) 
+    Literal 0 of ((FATHER ?@_39 ?@_38) (NOT (PARENT ?@_39 ?@_38)) (NOT (MALE ?@_39)))
+    Unification result: ((?@_50 . ?@_38) (?@_39 . SARA))
+    New Clause:((NOT (MALE SARA)) (NOT (PARENT SARA ?@_51)))
+Trying to unify: 
+    Literal 0 of ((NOT (FATHER SARA ?@_50))) 
+    Literal 2 of ((MOTHER ?@_44 ?@_45) (NOT (PARENT ?@_44 ?@_45)) (FATHER ?@_44 ?@_45))
+    Unification result: ((?@_50 . ?@_45) (?@_44 . SARA))
+    New Clause:((NOT (PARENT SARA ?@_52)) (MOTHER SARA ?@_52))
+Trying to unify: 
+    Literal 0 of ((NOT (FATHER SARA ?@_50))) 
+    Literal 1 of ((NOT (PARENT AVRAHAM ?@_49)) (FATHER AVRAHAM ?@_49))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 0 of ((NOT (FATHER SARA ?@_50))) 
+    Literal 1 of ((NOT (MALE AVRAHAM)) (FATHER AVRAHAM YZHAK))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 0 of ((NOT (FATHER SARA ?@_50))) 
+    Literal 1 of ((NOT (MALE SARA)) (FATHER SARA YZHAK))
+    Unification result: ((?@_50 . YZHAK))
+    Clause ((NOT (MALE SARA))) was filtered out.
+Trying to unify: 
+    Literal 0 of ((NOT (FATHER SARA ?@_50))) 
+    Literal 0 of ((FATHER AVRAHAM YZHAK) (MOTHER AVRAHAM YZHAK))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 0 of ((NOT (FATHER SARA ?@_50))) 
+    Literal 0 of ((FATHER SARA YZHAK) (MOTHER SARA YZHAK))
+    Unification result: ((?@_50 . YZHAK))
+    New Clause:((MOTHER SARA YZHAK))
+Trying to unify: 
+    Literal 0 of ((NOT (FATHER SARA ?@_50))) 
+    Literal 0 of ((FATHER SARA YZHAK) (NOT (PARENT SARA YZHAK)))
+    Unification result: ((?@_50 . YZHAK))
+    New Clause:((NOT (PARENT SARA YZHAK)))
+Trying to unify: 
+    Literal 0 of ((NOT (MOTHER AVRAHAM ($?Y_35 AVRAHAM)))) 
+    Literal 0 of ((MOTHER ?@_44 ?@_45) (NOT (PARENT ?@_44 ?@_45)) (FATHER ?@_44 ?@_45))
+    Unification result: ((?@_45 $?Y_35 AVRAHAM) (?@_44 . AVRAHAM))
+    New Clause:
+((FATHER AVRAHAM ($?Y_35 AVRAHAM))
+ (NOT (PARENT AVRAHAM ($?Y_35 AVRAHAM))))
+Trying to unify: 
+    Literal 0 of ((NOT (MOTHER AVRAHAM ($?Y_35 AVRAHAM)))) 
+    Literal 1 of ((FATHER AVRAHAM YZHAK) (MOTHER AVRAHAM YZHAK))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 0 of ((NOT (MOTHER AVRAHAM ($?Y_35 AVRAHAM)))) 
+    Literal 1 of ((FATHER SARA YZHAK) (MOTHER SARA YZHAK))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 0 of ((FATHER AVRAHAM YZHAK)) 
+    Literal 1 of ((PARENT ?@_40 ?@_41) (NOT (FATHER ?@_40 ?@_41)))
+    Unification result: ((?@_41 . YZHAK) (?@_40 . AVRAHAM))
+    Clause ((PARENT AVRAHAM YZHAK)) was filtered out.
+Trying to unify: 
+    Literal 0 of ((FATHER AVRAHAM YZHAK)) 
+    Literal 1 of ((MALE ?@_42) (NOT (FATHER ?@_42 ?@_43)))
+    Unification result: ((?@_43 . YZHAK) (?@_42 . AVRAHAM))
+    Clause ((MALE AVRAHAM)) was filtered out.
+Trying to unify: 
+    Literal 0 of ((FATHER AVRAHAM YZHAK)) 
+    Literal 0 of ((NOT (FATHER SARA ?@_50)))
+    Unification result: NIL
+    Unification failed.
+Trying to unify: 
+    Literal 0 of ((FATHER SARA YZHAK)) 
+    Literal 1 of ((PARENT ?@_40 ?@_41) (NOT (FATHER ?@_40 ?@_41)))
+    Unification result: ((?@_41 . YZHAK) (?@_40 . SARA))
+    Clause ((PARENT SARA YZHAK)) was filtered out.
+Trying to unify: 
+    Literal 0 of ((FATHER SARA YZHAK)) 
+    Literal 1 of ((MALE ?@_42) (NOT (FATHER ?@_42 ?@_43)))
+    Unification result: ((?@_43 . YZHAK) (?@_42 . SARA))
+    New Clause:((MALE SARA))
+Trying to unify: 
+    Literal 0 of ((FATHER SARA YZHAK)) 
+    Literal 0 of ((NOT (FATHER SARA ?@_50)))
+    Unification result: ((?@_50 . YZHAK))
+    New Clause:NIL
+(#S(RESOLUTION :CANDIDATE-ORDERING-STRATEGIES (SHORTEST-MIN-CLAUSE)
+    :CANDIDATE-FILTERS (TRIVIAL-CANDIDATE-FILTER)
+    :CLAUSE-FILTERS (TAUTOLOGY-FILTER UNIQUENESS-FILTER)
+    :INITIAL-CLAUSE-FILTERS (TRIVIAL-CLAUSE-FILTER))
+ (T 39)) 
+((#S(RESOLUTION
+     :CANDIDATE-ORDERING-STRATEGIES (SHORTEST-MIN-CLAUSE SHORTEST-SUM)
+     :CANDIDATE-FILTERS (SETOFSUPPORT-FILTER)
+     :CLAUSE-FILTERS (TAUTOLOGY-FILTER UNIQUENESS-FILTER)
+     :INITIAL-CLAUSE-FILTERS (TRIVIAL-CLAUSE-FILTER))
+  (T 7))
+ (#S(RESOLUTION
+     :CANDIDATE-ORDERING-STRATEGIES (SHORTEST-MIN-CLAUSE SHORTEST-SUM)
+     :CANDIDATE-FILTERS (TRIVIAL-CANDIDATE-FILTER)
+     :CLAUSE-FILTERS (TAUTOLOGY-FILTER UNIQUENESS-FILTER)
+     :INITIAL-CLAUSE-FILTERS (TRIVIAL-CLAUSE-FILTER))
+  (T 28))
+ (#S(RESOLUTION :CANDIDATE-ORDERING-STRATEGIES (SHORTEST-MIN-CLAUSE)
+     :CANDIDATE-FILTERS (TRIVIAL-CANDIDATE-FILTER)
+     :CLAUSE-FILTERS (TAUTOLOGY-FILTER UNIQUENESS-FILTER)
+     :INITIAL-CLAUSE-FILTERS (TRIVIAL-CLAUSE-FILTER))
+  (T 39)))
+[7]> (load "metering.lisp")
+;; Loading file metering.lisp ...
+*** - SYSTEM::%FIND-PACKAGE: There is no package with name "MONITOR"
+The following restarts are available:
+USE-VALUE      :R1      You may input a value to be used instead.
+SKIP           :R2      skip (IN-PACKAGE MONITOR NICKNAMES ...)
+STOP           :R3      stop loading file /nfs/home/s/s_kattoj/AI-COMP472/fancyprover/metering.lisp
+ABORT          :R4      ABORT
+Break 1 [8]> :R4
+[9]> cd '/nfs/home/s/s_kattoj/AI-COMP472/fancyprover'
+
+*** - EVAL: variable CD has no
+      value
+The following restarts are available:
+USE-VALUE      :R1      You may input a value to be used instead of CD.
+STORE-VALUE    :R2      You may input a new value for CD.
+ABORT          :R3      ABORT
+Break 1 [10]> 

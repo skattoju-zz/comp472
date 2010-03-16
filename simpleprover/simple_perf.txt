@@ -1,0 +1,378 @@
+;; Dribble of #<IO TERMINAL-STREAM> started 2010-03-09 14:42:09
+#<OUTPUT BUFFERED FILE-STREAM CHARACTER #P"simple_perf.txt">
+[3]> (monitor:with-monitoring ttest1)
+
+*** - READ from
+       #<INPUT CONCATENATED-STREAM #<INPUT STRING-INPUT-STREAM>
+         #<IO TWO-WAY-STREAM
+           #<IO ECHO-STREAM #<IO TERMINAL-STREAM>
+             #<OUTPUT BUFFERED FILE-STREAM CHARACTER
+               #P"simple_perf.txt">>
+           #<OUTPUT BROADCAST-STREAM #<IO TERMINAL-STREAM>
+             #<OUTPUT BUFFERED FILE-STREAM CHARACTER
+               #P"simple_perf.txt">>>>
+      : there is no package with name "MONITOR"
+The following restarts are available:
+ABORT          :R1      ABORT
+Break 1 [4]> :R1
+[5]> (monitor:with-monitoring ttest1)cd '/home/s/s_kattoj/AI-COMP472/simpleprover'
+
+*** - READ from
+       #<INPUT CONCATENATED-STREAM #<INPUT STRING-INPUT-STREAM>
+         #<IO TWO-WAY-STREAM
+           #<IO ECHO-STREAM #<IO TERMINAL-STREAM>
+             #<OUTPUT BUFFERED FILE-STREAM CHARACTER
+               #P"simple_perf.txt">>
+           #<OUTPUT BROADCAST-STREAM #<IO TERMINAL-STREAM>
+             #<OUTPUT BUFFERED FILE-STREAM CHARACTER
+               #P"simple_perf.txt">>>>
+      : there is no package with name "MONITOR"
+The following restarts are available:
+ABORT          :R1      ABORT
+Break 1 [6]> :R1
+[7]> (load "monitor.lisp")
+
+*** - LOAD: A file with name monitor.lisp does not exist
+The following restarts are available:
+ABORT          :R1      ABORT
+Break 1 [8]> (load "metering.lisp")
+;; Loading file metering.lisp ...
+WARNING: This file should be compiled before loading for best
+         results.
+;; Loaded file metering.lisp
+T
+Break 1 [8]> :R1
+[9]> (monitor:with-monitoring ttest1)
+
+*** - The macro MONITOR:WITH-MONITORING may not be called with
+       1
+      arguments: (MONITOR:WITH-MONITORING TTEST1)
+The following restarts are available:
+ABORT          :R1      ABORT
+Break 1 [10]> :R1
+[11]> (monitor:with-metering ttest1)
+
+*** - READ from
+       #<INPUT CONCATENATED-STREAM #<INPUT STRING-INPUT-STREAM>
+         #<IO TWO-WAY-STREAM
+           #<IO ECHO-STREAM #<IO TERMINAL-STREAM>
+             #<OUTPUT BUFFERED FILE-STREAM CHARACTER
+               #P"simple_perf.txt">>
+           #<OUTPUT BROADCAST-STREAM #<IO TERMINAL-STREAM>
+             #<OUTPUT BUFFERED FILE-STREAM CHARACTER
+               #P"simple_perf.txt">>>>
+      : #<PACKAGE MONITOR> has no external symbol with name
+       "WITH-METERING"
+
+The following restarts are available:
+ABORT          :R1      ABORT
+Break 1 [12]> :R1
+[13]> (monitor:with-monitoring '(ttest1))
+
+*** - The macro MONITOR:WITH-MONITORING may not be called with
+       1
+      arguments: (MONITOR:WITH-MONITORING '(TTEST1))
+The following restarts are available:
+ABORT          :R1      ABORT
+Break 1 [14]> (monitor:with-monitoring (ttest1))
+
+*** - The macro MONITOR:WITH-MONITORING may not be called with
+       1
+      arguments: (MONITOR:WITH-MONITORING (TTEST1))
+The following restarts are available:
+ABORT          :R1      ABORT
+ABORT          :R2      ABORT
+Break 2 [15]> :R1
+Break 1 [14]> (ttest1)
+this is reolution "var_10726" 
+this is reolution "var_10727" 
+this is reolution "var_10728" 
+this is reolution "var_10729" 
+
+"I found the proof"  ===step 1 ===: 
+ ((~ D)) + ((~ A) (~ C) (D)) using NIL = ((~ C) (~ A)) 
+ ===step 2 ===: 
+ ((~ C) (~ A)) + ((A)) using NIL = ((~ C)) 
+ ===step 3 ===: 
+ ((~ C)) + ((~ M) (C)) using NIL = ((~ M)) 
+ ===step 4 ===: 
+ ((~ M)) + ((M)) using NIL = NIL 
+NIL
+Break 1 [14]> (monitor:monitor-form (ttest1))
+this is reolution "var_10739" 
+this is reolution "var_10740" 
+this is reolution "var_10741" 
+this is reolution "var_10742" 
+
+"I found the proof"  ===step 1 ===: 
+ ((~ D)) + ((~ A) (~ C) (D)) using NIL = ((~ C) (~ A)) 
+ ===step 2 ===: 
+ ((~ C) (~ A)) + ((A)) using NIL = ((~ C)) 
+ ===step 3 ===: 
+ ((~ C)) + ((~ M) (C)) using NIL = ((~ M)) 
+ ===step 4 ===: 
+ ((~ M)) + ((M)) using NIL = NIL 
+Real time: 0.022927 sec.
+Run time: 0.022996 sec.
+Space: 115136 Bytes
+                                              Cons
+                %     %                       Per      Total   Total
+Function        Time  Cons  Calls  Sec/Call   Call     Time    Cons
+---------------------------------------------------------------------
+INRECORD:       0.41  0.45      9  0.000876   5013  0.007883   45120
+TRACE-SOLUTION: 0.20  0.31      9  0.000432   3444  0.003885   30992
+CHECK:          0.15  0.09     10  0.000287    874  0.002872    8736
+PROVEDRIVER:    0.05  0.02      1  0.000987   2032  0.000987    2032
+TTEST1:         0.05  0.00      1  0.000987    240  0.000987     240
+UNIFIABLE:      0.05  0.01      4  0.000237    240  0.000948     960
+MAKE-NODE:      0.03  0.02     34  0.000017     64  0.000565    2176
+NODE-SUBST:     0.03  0.00     34  0.000017      8  0.000565     272
+NODE-CLAUSE1:   0.03  0.00     38  0.000014      8  0.000514     304
+NODE-CLAUSE2:   0.03  0.00     38  0.000014      8  0.000514     304
+---------------------------------------------------------------------
+TOTAL:          1.02  0.90    178                   0.019719   91136
+Estimated monitoring overhead: 0.00 seconds
+Estimated total monitoring overhead: 0.00 seconds
+NIL
+Break 1 [14]> (monitor:monitor-form (ttest1))
+this is reolution "var_10755" 
+this is reolution "var_10756" 
+this is reolution "var_10757" 
+this is reolution "var_10758" 
+
+"I found the proof"  ===step 1 ===: 
+ ((~ D)) + ((~ A) (~ C) (D)) using NIL = ((~ C) (~ A)) 
+ ===step 2 ===: 
+ ((~ C) (~ A)) + ((A)) using NIL = ((~ C)) 
+ ===step 3 ===: 
+ ((~ C)) + ((~ M) (C)) using NIL = ((~ M)) 
+ ===step 4 ===: 
+ ((~ M)) + ((M)) using NIL = NIL 
+Real time: 0.023509 sec.
+Run time: 0.021996 sec.
+Space: 115136 Bytes
+                                              Cons
+                %     %                       Per      Total   Total
+Function        Time  Cons  Calls  Sec/Call   Call     Time    Cons
+---------------------------------------------------------------------
+INRECORD:       0.65  0.45      9  0.001320   5013  0.011882   45120
+TRACE-SOLUTION: 0.16  0.31      9  0.000321   3444  0.002885   30992
+CHECK:          0.10  0.09     10  0.000187    874  0.001872    8736
+PROVEDRIVER:    0.05  0.02      1  0.000987   2032  0.000987    2032
+PROVE:          0.05  0.02      4  0.000237    600  0.000949    2400
+COPY:           0.04  0.03     20  0.000037    149  0.000743    2976
+MAKE-NODE:      0.03  0.02     34  0.000017     64  0.000565    2176
+---------------------------------------------------------------------
+TOTAL:          1.09  0.94     87                   0.019883   94432
+Estimated monitoring overhead: 0.00 seconds
+Estimated total monitoring overhead: 0.00 seconds
+NIL
+Break 1 [14]> :R1
+[16]> (monitor:monitor-form (ttest1))
+this is reolution "var_10771" 
+this is reolution "var_10772" 
+this is reolution "var_10773" 
+this is reolution "var_10774" 
+
+"I found the proof"  ===step 1 ===: 
+ ((~ D)) + ((~ A) (~ C) (D)) using NIL = ((~ C) (~ A)) 
+ ===step 2 ===: 
+ ((~ C) (~ A)) + ((A)) using NIL = ((~ C)) 
+ ===step 3 ===: 
+ ((~ C)) + ((~ M) (C)) using NIL = ((~ M)) 
+ ===step 4 ===: 
+ ((~ M)) + ((M)) using NIL = NIL 
+Real time: 0.026526 sec.
+Run time: 0.022997 sec.
+Space: 115136 Bytes
+                                              Cons
+                %     %                       Per      Total   Total
+Function        Time  Cons  Calls  Sec/Call   Call     Time    Cons
+---------------------------------------------------------------------
+INRECORD:       0.51  0.45      9  0.001098   5013  0.009885   45120
+CHECK:          0.15  0.09     10  0.000287    874  0.002872    8736
+MAKE-NODE:      0.13  0.02     34  0.000075     64  0.002564    2176
+NODE-SUBST:     0.08  0.00     34  0.000046      8  0.001565     272
+UNIFIABLE:      0.05  0.01      4  0.000237    240  0.000948     960
+TRACE-SOLUTION: 0.05  0.31      9  0.000098   3444  0.000885   30992
+COPY:           0.04  0.03     20  0.000037    149  0.000744    2976
+NODE-CLAUSE2:   0.03  0.00     38  0.000014      8  0.000514     304
+---------------------------------------------------------------------
+TOTAL:          1.04  0.91    158                   0.019976   91536
+Estimated monitoring overhead: 0.00 seconds
+Estimated total monitoring overhead: 0.00 seconds
+NIL
+[17]> (ttest1)
+this is reolution "var_10778" 
+this is reolution "var_10779" 
+this is reolution "var_10780" 
+this is reolution "var_10781" 
+
+"I found the proof"  ===step 1 ===: 
+ ((~ D)) + ((~ A) (~ C) (D)) using NIL = ((~ C) (~ A)) 
+ ===step 2 ===: 
+ ((~ C) (~ A)) + ((A)) using NIL = ((~ C)) 
+ ===step 3 ===: 
+ ((~ C)) + ((~ M) (C)) using NIL = ((~ M)) 
+ ===step 4 ===: 
+ ((~ M)) + ((M)) using NIL = NIL 
+NIL
+[18]> (load "simpleprover.lisp")
+;; Loading file simpleprover.lisp ...
+** - Continuable Error
+MAKE-PACKAGE: a package with name
+      "testprover"
+     already exists.
+If you continue (by typing 'continue'): return the existing package
+The following restarts are also available:
+READ           :R1      input another name
+SKIP           :R2      skip (MAKE-PACKAGE testprover)
+STOP           :R3      stop loading file /nfs/home/s/s_kattoj/AI-COMP472/simpleprover/simpleprover.lisp
+ABORT          :R4      ABORT
+Break 1 [19]> :R2
+;; Loaded file simpleprover.lisp
+T
+[20]> (ttest1)
+this is reolution "var_0" 
+this is reolution "var_0" 
+this is reolution "var_0" 
+this is reolution "var_0" 
+
+"I found the proof"  ===step 1 ===: 
+ ((~ D)) + ((~ A) (~ C) (D)) using NIL = ((~ C) (~ A)) 
+ ===step 2 ===: 
+ ((~ C) (~ A)) + ((A)) using NIL = ((~ C)) 
+ ===step 3 ===: 
+ ((~ C)) + ((~ M) (C)) using NIL = ((~ M)) 
+ ===step 4 ===: 
+ ((~ M)) + ((M)) using NIL = NIL 
+NIL
+[21]> (load "simpleprover.lisp")
+;; Loading file simpleprover.lisp ...
+** - Continuable Error
+MAKE-PACKAGE: a package with name
+      "testprover"
+     already exists.
+If you continue (by typing 'continue'): return the existing package
+The following restarts are also available:
+READ           :R1      input another name
+SKIP           :R2      skip (MAKE-PACKAGE testprover)
+STOP           :R3      stop loading file /nfs/home/s/s_kattoj/AI-COMP472/simpleprover/simpleprover.lisp
+ABORT          :R4      ABORT
+Break 1 [22]> :R2
+;; Loaded file simpleprover.lisp
+T
+[23]> (ttest1)
+this is reolution "var_0" 
+this is reolution "var_0" 
+this is reolution "var_0" 
+this is reolution "var_0" 
+
+"I found the proof"  ===step 1 ===: 
+ ((~ D)) + ((~ A) (~ C) (D)) using NIL = ((~ C) (~ A)) 
+ ===step 2 ===: 
+ ((~ C) (~ A)) + ((A)) using NIL = ((~ C)) 
+ ===step 3 ===: 
+ ((~ C)) + ((~ M) (C)) using NIL = ((~ M)) 
+ ===step 4 ===: 
+ ((~ M)) + ((M)) using NIL = NIL 
+NIL
+[24]> (ttest1)
+this is reolution "var_0" 
+this is reolution "var_0" 
+this is reolution "var_0" 
+this is reolution "var_0" 
+
+"I found the proof"  ===step 1 ===: 
+ ((~ D)) + ((~ A) (~ C) (D)) using NIL = ((~ C) (~ A)) 
+ ===step 2 ===: 
+ ((~ C) (~ A)) + ((A)) using NIL = ((~ C)) 
+ ===step 3 ===: 
+ ((~ C)) + ((~ M) (C)) using NIL = ((~ M)) 
+ ===step 4 ===: 
+ ((~ M)) + ((M)) using NIL = NIL 
+NIL
+[25]> (load "simpleprover.lisp")
+;; Loading file simpleprover.lisp ...
+** - Continuable Error
+MAKE-PACKAGE: a package with name
+      "testprover"
+     already exists.
+If you continue (by typing 'continue'): return the existing package
+The following restarts are also available:
+READ           :R1      input another name
+SKIP           :R2      skip (MAKE-PACKAGE testprover)
+STOP           :R3      stop loading file /nfs/home/s/s_kattoj/AI-COMP472/simpleprover/simpleprover.lisp
+ABORT          :R4      ABORT
+Break 1 [26]> :R1
+
+*** - APPLY: too few arguments
+      given to
+       #<COMPILED-FUNCTION
+         SYSTEM::PROMPT-FOR-NEW-VALUE>
+
+The following restarts are available:
+ABORT          :R1      ABORT
+SKIP           :R2      skip (MAKE-PACKAGE testprover)
+STOP           :R3      stop loading file /nfs/home/s/s_kattoj/AI-COMP472/simpleprover/simpleprover.lisp
+ABORT          :R4      ABORT
+Break 2 [27]> tp
+
+*** - EVAL: variable TP has no
+      value
+The following restarts are available:
+USE-VALUE      :R1      You may input a value to be used instead of TP.
+STORE-VALUE    :R2      You may input a new value for TP.
+ABORT          :R3      ABORT
+ABORT          :R4      ABORT
+SKIP           :R5      skip (MAKE-PACKAGE testprover)
+STOP           :R6      stop loading file /nfs/home/s/s_kattoj/AI-COMP472/simpleprover/simpleprover.lisp
+ABORT          :R7      ABORT
+Break 3 [28]> :R7
+[29]> (load "simpleprover.lisp")
+;; Loading file simpleprover.lisp ...
+** - Continuable Error
+MAKE-PACKAGE: a package with name
+      "testprover"
+     already exists.
+If you continue (by typing 'continue'): return the existing package
+The following restarts are also available:
+READ           :R1      input another name
+SKIP           :R2      skip (MAKE-PACKAGE testprover)
+STOP           :R3      stop loading file /nfs/home/s/s_kattoj/AI-COMP472/simpleprover/simpleprover.lisp
+ABORT          :R4      ABORT
+Break 1 [30]> :R2
+;; Loaded file simpleprover.lisp
+T
+[31]> (load "simpleprover.lisp")
+;; Loading file simpleprover.lisp ...
+** - Continuable Error
+MAKE-PACKAGE: a package with name
+      "testprover"
+     already exists.
+If you continue (by typing 'continue'): return the existing package
+The following restarts are also available:
+READ           :R1      input another name
+SKIP           :R2      skip (MAKE-PACKAGE testprover)
+STOP           :R3      stop loading file /nfs/home/s/s_kattoj/AI-COMP472/simpleprover/simpleprover.lisp
+ABORT          :R4      ABORT
+Break 1 [32]> :R2
+;; Loaded file simpleprover.lisp
+T
+[33]> (ttest1)
+this is reolution "var_0" 
+this is reolution "var_0" 
+this is reolution "var_0" 
+this is reolution "var_0" 
+
+"I found the proof"  ===step 1 ===: 
+ ((~ D)) + ((~ A) (~ C) (D)) using NIL = ((~ C) (~ A)) 
+ ===step 2 ===: 
+ ((~ C) (~ A)) + ((A)) using NIL = ((~ C)) 
+ ===step 3 ===: 
+ ((~ C)) + ((~ M) (C)) using NIL = ((~ M)) 
+ ===step 4 ===: 
+ ((~ M)) + ((M)) using NIL = NIL 
+NIL
+[34]> (quit)
+Bye.

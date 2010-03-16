@@ -1,0 +1,268 @@
+(defun supertest () 
+(
+	
+	(loop for c from 1 to 29 
+		do(
+			(ProveDriver '(intern (concatenate( "test" (string c)))))
+		)
+	
+	)
+	 
+
+	(define test1 '())
+	(define test2 '(((A a)) ((~ (A a)))))
+	(define test3 '(((A a)) ((~ (A b)))))
+	(define test4 '(((A ?x)) ((~ (A a)))))
+	(define test5 '(((A a)) ((~ (A ?x)))))
+	(define test6 '(((A ?x)) ((~ (A ?x)))))
+	(define test7 '(((~ a) b) (a) ((~ b))))
+	(define test8 '(((~ (A ?X)) (A (A ?X))) ((A a)) ((~ (A (A (A (A (A (A a))))))))))
+	(define test9 '(((~ (A ?X)) (A (A ?X))) ((A a))))
+	(define test10 '(((~ (A ?X)) (A (A ?X))) ((A a))  ((~ (B ?X)) (B (B ?X))) ((B b)) ((~ (A (A (A (A (A (A a))))))))))
+	(define test11 '(((~ (A ?x)) (B ?x)) ((A ?y)) ((~ (B ?z)) (A ?z))))
+	(define test12 '(((~ (A ?x)) (B ?x)) ((A ?y)) ((~ (B ?z)) (C ?z)) ((~ (C ?k)) (D ?k)) ((~ (D ?l)) (A ?l)) ))
+	(define test13 '(((~ a) (~ b)) (a b)))
+	(define test14 '(((~ a) (~ b)) (a b) ((~ a) b)  ((~ b) a)))
+	
+	
+	;test15 is unsat
+	(define test15 '(
+	((~ (b bf)))
+		((b bm))
+	((~ (b ba)))
+	((o bf f))
+		((o bm m))
+		((o ba a))
+		((~ (a ?x)) (~ (o ?x h)) (~ (o ?x l)))
+		((s a f))
+		((s a m))
+		((s m h))
+		((s m l))
+		( (~ (s ?y ?z)) (~ (s ?x ?y)) (s ?x ?z))
+		((b ?x) (a ?x))
+		((~ (o ?x ?y)) (~ (s ?y ?z)) (o ?x ?z))
+		;((~ (s ?y ?z)))
+	))
+	
+	
+	;;;;  to get more test-cases, you might randomly remove clauses from a 
+	;;;;  certain unsat-test-case to get another sat-test-case. 
+	;;;;  ---> in a way like or is a game to find the Set-Of-Support???!!!
+	
+	
+	;test16 is unsat
+	(define test16  
+	'(((S ?x1) (M ?x1))
+	((~ (M ?x2))  (~ (L ?x2 Rain)))
+	((~ (S ?x3)) (L ?x3 Snow)) 
+	((~ (L Tony ?x4))  (~ (L Ellen ?x4)))
+	((L Tony  ?x5)  (L Ellen ?x5))
+	((L Tony  Rain))
+	((L Tony  Snow))
+	((~ (M ?x7)) (S ?x7))))
+	
+	
+	
+	;test17 is  unsat
+	(define test17 
+	'(((lives  agatha))
+	((lives  butler))
+	((lives  charles))
+	((killed agatha agatha) (killed butler agatha) (killed charles agatha)) 
+	((~ (killed ?x ?y)) (hates ?x ?y))
+	((~ (killed ?x ?y)) (~ (richer ?x ?y)))
+	((~ (hates agatha ?x))   (~ (hates charles ?x))) 
+	((hates agatha agatha))
+	((hates agatha charles))
+	((~ (lives ?x))  (~ (richer ?x agatha))  (hates butler ?x))
+	((~ (hates agatha ?x)) (hates butler ?x))       
+	((~ (hates ?x agatha))  (~ (hates ?x butler))   (~ (hates ?x charles)))
+	((~ (killed agatha agatha))  (~ (killed butler agatha))  (~ (killed charles agatha)))))
+	
+	
+	;=========================================
+	;test18 
+	;unsat, 10 clauses
+	;=========================================
+	(define test18
+	'(
+	((~ (T b)) (~ (T l)))
+	((~ (T b)) (~ (T j)))
+	((~ (T l)) (~ (T j)))
+	((~ (T ?x)) (~ (H ?x)))
+	((T b) (T l) (T j))
+	((T l) (H l) (~ (T b)))
+	((T j)  (~ (H l)) (T l))
+	((T j)  (~ (H l)) (H l))
+	((T j)  (~ (H l)) (~ (T b)))
+	((T b)  (~ (T l)) (~ (H l)) (T ?x) (T j) )
+	))
+	
+	
+	;=========================================
+	;test19 
+	;unsat, containing 1 function, 3 clauses
+	;=========================================
+	(define test19 '(
+	((~ (P (e ?x ?y))) (~ (P ?x)) (P ?y))
+	((P  (e (e ?x ?y) (e (e ?x ?z) (e ?z ?y)))))
+	((~  (P (e (e a b) (e (e c b)  (e a c))))))))
+	
+	
+	;=========================================
+	;test20 
+	;sat, containing 2 functions, 3 clauses
+	;=========================================
+	(define test20 '(
+	((~ (p ?y ?y)) (p a a)   (~ (s (f ?y) a)))
+	((s a ?y)  (~ (s ?y (f ?y)))    (q (g ?y) (g ?y)))
+	((q b ?y)   (~ (q ?y (g ?y)))    (s b b))))
+	
+	(define test21 '(
+	((A b c))
+	((~ (B ?x ?y)) (~ (A ?x ?y)) (B ?x ?y))
+	))
+	
+	
+	(define test22 '(
+	((A b c))
+	((~ (B ?x ?y)) (~ (A ?x ?y)) (B ?y ?x))
+	))
+	
+	;=========================================
+	;test7 
+	;unsat, containing 0 functions, 6 clauses
+	;=========================================
+	
+	(define test23 '(((~ (P ?x ?y)) (~ (P ?y ?z)) (P ?x ?z))
+	((~ (Q ?x ?y)) (~ (Q ?y ?z)) (Q ?x ?z))
+	((~ (Q ?x ?y)) (Q ?y ?x))
+	((P ?x ?y) (Q ?x ?y))
+	((~ (P a b)))
+	((~ (Q c d)))))
+	
+	
+	;=========================================
+	;test8 
+	;unsat, containing 1 functions, 10 clauses
+	;=========================================
+	(define test24 
+	'(((~ (A ?x)) (B ?y) (~ (R ?x ?y)))
+	((~ (B ?x)) (C ?y) (~ (S ?x ?y))) 
+	((~ (C ?x)) (R ?x (f ?x)) )
+	((~ (C ?x))  (D (f ?x))) 
+	((~ (D ?x)) (~ (C ?y)) (~ (T ?x ?y)) )
+	((~ (R ?x ?y)) (T ?y ?x))
+	((~ (T ?x ?y)) (R ?y ?x))
+	((A a))
+	((T e a))
+	((S e f))))
+	
+	
+	
+	;=========================================
+	;test9 
+	;unsat, containing 3 functions, 24 clauses
+	;=========================================
+	(define test25
+	'(( (c1 ?x) (~ (c0 ?x)))
+	((c0 a))
+	((~ (c2 ?x)) (c3 ?y) (~ (invr1 ?x ?y)))
+	((~ (c4 ?x)) (c5 ?y) (~ (invr3 ?x ?y)))
+	((~ (c5 ?x)) (c6 ?y) (~ (invr2 ?x ?y)))
+	((~ (c6 ?x)) (~ (c5 ?y)) (~ (invr1 ?x ?y)))
+	((~ (c2 ?x)) (r2 ?x (f ?x)) )
+	((~ (c2 ?x)) (c3 (f ?x))) 
+	((~ (c3 ?x)) (r3 ?x (g ?x)) )
+	((~ (c3 ?x)) (c1 (g ?x))) 
+	((~ (c3 ?x)) (c4 (g ?x))) 
+	((~ (c1 ?x)) (c2 ?x))
+	((~ (c1 ?x)) (c3 ?x))
+	((~ (c1 ?x)) (c4 ?x))
+	((~ (c1 ?x)) (c5 ?x))
+	((~ (c1 ?x)) (c6 ?x))
+	((~ (c1 ?x)) (r1 ?x (h ?x)) )
+	((~ (c1 ?x)) (c2 (h ?x))) 
+	((~ (r1 ?x ?y)) (invr1 ?y ?x))
+	((~ (invr1 ?x ?y)) (r1 ?y ?x))
+	((~ (r2 ?x ?y)) (invr2 ?y ?x))
+	((~ (invr2 ?x ?y)) (r2 ?y ?x))
+	((~ (r3 ?x ?y)) (invr3 ?y ?x))
+	((~ (invr3 ?x ?y)) (r3 ?y ?x))))
+	
+	
+	;=========================================
+	;test10 
+	;unsat, 28 clauses
+	;    1 function; 9 constants; 11 predicates     
+	;=========================================
+	(define test26
+	'(((h11 a11 a12))
+	((h12 a12 a13))
+	((h21 a21 a22))
+	((h22 a22 a23))
+	((h31 a31 a32))
+	((h32 a32 a33))
+	((v11 a11 a21))
+	((v12 a21 a31))
+	((~ (A ?x)) (~ (r ?x ?y)) (A ?y))
+	((~ (h11 ?x ?y))  (h ?x ?y))
+	((~ (h12 ?x ?y))  (h ?x ?y))
+	((~ (h21 ?x ?y))  (h ?x ?y))
+	((~ (h22 ?x ?y))  (h ?x ?y))
+	((~ (h31 ?x ?y))  (h ?x ?y))
+	((~ (h32 ?x ?y))  (h ?x ?y))
+	((~ (v11 ?x ?y))  (v ?x ?y))
+	((~ (v12 ?x ?y))  (v ?x ?y))
+	((~ (v ?x ?y))  (r ?x ?y))
+	((~ (h ?x ?y))  (r ?x ?y))
+	((~ (A a13)) (~ (A a23)) (~ (A a33)) (B a33))
+	((~ (B ?x)) (s ?x (f1 ?x)))
+	((~ (B ?x)) (C (f1 ?x)))
+	((~ (h ?x ?y)) (~ (s ?y ?z)) (s ?x ?z))
+	((~ (v12 ?x ?y)) (~ (s ?y ?z)) (s a23 ?z))
+	((~ (v11 ?x ?y)) (~ (s ?y ?z)) (s a13 ?z))
+	((~ (s ?x ?y)) (~ (s ?y ?z)) (s ?x ?z))
+	((~ (h11 ?x ?y)) (~ (v11 ?x ?z)) (~ (s ?x ?w)) (~ (C ?w))) 
+	((A a11))
+	))
+	
+	; the following two tests are small.
+	; they are for special purpose.
+	; They check if a system has:
+	; (1) minmal redudancy elimination
+	; (2) factoring 
+	;
+	;=========================================
+	;test11 
+	;sat, 2 clauses,  1 function; 2 literals 
+	;=========================================
+	(define test27
+	'(((~ (p ?x)) (p (f ?x)))
+	((p (f ?z)) (~ (p ?z)))))
+	
+	
+	;=========================================
+	;test12
+	;unsat, 4 clauses, 1 function; 4 literals 
+	;=========================================
+	(define test28
+	'(((~ (p ?x)) (p (g ?x)))
+	((p (g ?z)) (~ (p ?z)))
+	((Q ?y) (Q ?x))
+	((~ (Q ?y)) (~ (Q ?x)))))
+	
+	(define test29
+	'((owns bill a_bmw)
+	(owns jack a_ferrari)
+	(ferrari a_errari)
+	(bmw a_bmw)
+	((not (owns ?x ?y)) (not  (bmw ?y))  (racing_car_fan ?x))
+	((not (racing_car_fan ?x)) (not (scratches ?x ?y)) (not car ?y))
+	((not bmw ?x) (car ?x))
+	((not ferrari ?x) (car ?x))
+	((scratches bill a_ferrari) (scratches joe a_ferrari))
+	((not (scratches bill a_ferrari)) (not (scratches joe a_ferrari)))
+	((not scratches ?x  a_ferrari))))
+	)
+)

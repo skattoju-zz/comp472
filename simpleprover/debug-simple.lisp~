@@ -1,4 +1,5 @@
 (load "psgraph.lisp")
 (load "xref.lisp")
-(load "testprover.lisp")
-(xref:xref-files "testprover.lisp" "test.lisp")
+(load "simpleprover.lisp")
+(load "metering.lisp")
+(xref:xref-files "simpleprover.lisp")

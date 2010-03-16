@@ -1,0 +1,894 @@
+;; Dribble of #<IO TERMINAL-STREAM> started 2010-03-13 16:10:54
+#<OUTPUT BUFFERED FILE-STREAM CHARACTER #P"ferrari.txt">
+[128]> (test26)
+no negated goal supplied 
+ assuming last clause ((SCRATCHES ?X A_FERRARI)) to be the negated goal 
+prove interation": 0" with clauses 
+(((OWNS JACK A_FERRARI)) (FERRARI A_FERRARI) (BMW A_BMW) ((~ BMW ?X) (CAR ?X)) ((~ FERRARI ?X) (CAR ?X))
+ (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) (OWNS BILL A_BMW)
+ ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y))
+ (SCRATCHES BILL A_FERRARI) (SCRATCHES JOE A_FERRARI) ((SCRATCHES ?X A_FERRARI))) 
+iterating from the back of the clause list ... 
+selected clause # 11 ... 
+looking for a possible resolutions with ((SCRATCHES ?X A_FERRARI)) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+possible resolution .. 
+ ((SCRATCHES ?X A_FERRARI)) at position 0 and ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) at position 1 with substitution ((?Y . A_FERRARI)) 
+applying substitution ((?Y . A_FERRARI)) to ((SCRATCHES ?X A_FERRARI)) at position 0 
+applying substitution ((?Y . A_FERRARI)) to ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) at position 0 
+adding (~ RACING_CAR_FAN ?X) to the resolvent 
+applying substitution ((?Y . A_FERRARI)) to ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) at position 1 
+applying substitution ((?Y . A_FERRARI)) to ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) at position 2 
+adding (~ CAR A_FERRARI) to the resolvent 
+((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) is the resolvent 
+ 
+prove interation": 1" with clauses 
+(((OWNS JACK A_FERRARI)) (FERRARI A_FERRARI) (BMW A_BMW) ((~ BMW ?X) (CAR ?X)) ((~ FERRARI ?X) (CAR ?X))
+ (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) (OWNS BILL A_BMW)
+ ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y))
+ (SCRATCHES BILL A_FERRARI) (SCRATCHES JOE A_FERRARI) ((SCRATCHES ?X A_FERRARI))
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X))) 
+iterating from the back of the clause list ... 
+selected clause # 12 ... 
+looking for a possible resolutions with ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with (BMW A_BMW) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with ((~ BMW ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 0 and ((~ BMW ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 0 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 1 
+adding (~ RACING_CAR_FAN A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?X) (CAR ?X)) at position 0 
+adding (~ BMW A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (CAR ?X)) at position 1 
+((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) is the resolvent 
+ 
+prove interation": 2" with clauses 
+(((OWNS JACK A_FERRARI)) (FERRARI A_FERRARI) (BMW A_BMW) ((~ BMW ?X) (CAR ?X)) ((~ FERRARI ?X) (CAR ?X))
+ (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) (OWNS BILL A_BMW)
+ ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y))
+ (SCRATCHES BILL A_FERRARI) (SCRATCHES JOE A_FERRARI) ((SCRATCHES ?X A_FERRARI))
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))) 
+iterating from the back of the clause list ... 
+selected clause # 13 ... 
+looking for a possible resolutions with ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+possible resolution .. 
+ ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 1 and ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 0 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 1 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 0 
+adding (~ OWNS A_FERRARI ?Y) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS A_FERRARI ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 1 
+adding (~ BMW ?Y) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS A_FERRARI ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 
+((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) is the resolvent 
+ 
+prove interation": 3" with clauses 
+(((OWNS JACK A_FERRARI)) (FERRARI A_FERRARI) (BMW A_BMW) ((~ BMW ?X) (CAR ?X)) ((~ FERRARI ?X) (CAR ?X))
+ (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) (OWNS BILL A_BMW)
+ ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y))
+ (SCRATCHES BILL A_FERRARI) (SCRATCHES JOE A_FERRARI) ((SCRATCHES ?X A_FERRARI))
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))
+ ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI))) 
+iterating from the back of the clause list ... 
+selected clause # 14 ... 
+looking for a possible resolutions with ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 13 ... 
+looking for a possible resolutions with ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+possible resolution .. 
+ ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 1 and ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 0 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 1 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 0 
+adding (~ OWNS A_FERRARI ?Y) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS A_FERRARI ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 1 
+adding (~ BMW ?Y) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS A_FERRARI ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 
+((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 12 ... 
+looking for a possible resolutions with ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with (BMW A_BMW) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with ((~ BMW ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 0 and ((~ BMW ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 0 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 1 
+adding (~ RACING_CAR_FAN A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?X) (CAR ?X)) at position 0 
+adding (~ BMW A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (CAR ?X)) at position 1 
+((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with ((~ FERRARI ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 0 and ((~ FERRARI ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 0 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 1 
+adding (~ RACING_CAR_FAN A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ FERRARI ?X) (CAR ?X)) at position 0 
+adding (~ FERRARI A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ FERRARI A_FERRARI) (CAR ?X)) at position 1 
+((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) is the resolvent 
+ 
+prove interation": 4" with clauses 
+(((OWNS JACK A_FERRARI)) (FERRARI A_FERRARI) (BMW A_BMW) ((~ BMW ?X) (CAR ?X)) ((~ FERRARI ?X) (CAR ?X))
+ (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) (OWNS BILL A_BMW)
+ ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y))
+ (SCRATCHES BILL A_FERRARI) (SCRATCHES JOE A_FERRARI) ((SCRATCHES ?X A_FERRARI))
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))
+ ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))) 
+iterating from the back of the clause list ... 
+selected clause # 15 ... 
+looking for a possible resolutions with ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+possible resolution .. 
+ ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 1 and ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 0 
+adding (~ FERRARI A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 1 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 0 
+adding (~ OWNS A_FERRARI ?Y) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS A_FERRARI ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 1 
+adding (~ BMW ?Y) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS A_FERRARI ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 
+((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) is the resolvent 
+ 
+prove interation": 5" with clauses 
+(((OWNS JACK A_FERRARI)) (FERRARI A_FERRARI) (BMW A_BMW) ((~ BMW ?X) (CAR ?X)) ((~ FERRARI ?X) (CAR ?X))
+ (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) (OWNS BILL A_BMW)
+ ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y))
+ (SCRATCHES BILL A_FERRARI) (SCRATCHES JOE A_FERRARI) ((SCRATCHES ?X A_FERRARI))
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))
+ ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))
+ ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI))) 
+iterating from the back of the clause list ... 
+selected clause # 16 ... 
+looking for a possible resolutions with ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 15 ... 
+looking for a possible resolutions with ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+possible resolution .. 
+ ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 1 and ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 0 
+adding (~ FERRARI A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 1 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 0 
+adding (~ OWNS A_FERRARI ?Y) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS A_FERRARI ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 1 
+adding (~ BMW ?Y) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS A_FERRARI ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 
+((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 14 ... 
+looking for a possible resolutions with ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 13 ... 
+looking for a possible resolutions with ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+possible resolution .. 
+ ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 1 and ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 0 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 1 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 0 
+adding (~ OWNS A_FERRARI ?Y) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS A_FERRARI ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 1 
+adding (~ BMW ?Y) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS A_FERRARI ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 
+((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 12 ... 
+looking for a possible resolutions with ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with (BMW A_BMW) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with ((~ BMW ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 0 and ((~ BMW ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 0 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 1 
+adding (~ RACING_CAR_FAN A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?X) (CAR ?X)) at position 0 
+adding (~ BMW A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (CAR ?X)) at position 1 
+((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with ((~ FERRARI ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 0 and ((~ FERRARI ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 0 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 1 
+adding (~ RACING_CAR_FAN A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ FERRARI ?X) (CAR ?X)) at position 0 
+adding (~ FERRARI A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ FERRARI A_FERRARI) (CAR ?X)) at position 1 
+((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 1 and ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 with substitution NIL 
+applying substitution NIL to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 0 
+adding (~ CAR A_FERRARI) to the resolventapplying substitution NIL to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 1 
+applying substitution NIL to ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 0 
+adding (~ OWNS ?X ?Y) to the resolvent 
+applying substitution NIL to ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 1 
+adding (~ BMW ?Y) to the resolvent 
+applying substitution NIL to ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 
+((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) is the resolvent 
+ 
+prove interation": 6" with clauses 
+(((OWNS JACK A_FERRARI)) (FERRARI A_FERRARI) (BMW A_BMW) ((~ BMW ?X) (CAR ?X)) ((~ FERRARI ?X) (CAR ?X))
+ (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) (OWNS BILL A_BMW)
+ ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y))
+ (SCRATCHES BILL A_FERRARI) (SCRATCHES JOE A_FERRARI) ((SCRATCHES ?X A_FERRARI))
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))
+ ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))
+ ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI))) 
+iterating from the back of the clause list ... 
+selected clause # 17 ... 
+looking for a possible resolutions with ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+possible resolution .. 
+ ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 1 and ((OWNS JACK A_FERRARI)) at position 0 with substitution ((?Y . A_FERRARI) (?X . JACK)) 
+applying substitution ((?Y . A_FERRARI) (?X . JACK)) to ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 0 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?Y . A_FERRARI) (?X . JACK)) to ((~ BMW A_FERRARI) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 1 
+applying substitution ((?Y . A_FERRARI) (?X . JACK)) to ((~ BMW A_FERRARI) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 10 
+adding (~ CAR A_FERRARI) to the resolventapplying substitution ((?Y . A_FERRARI) (?X . JACK)) to ((OWNS JACK A_FERRARI)) at position 0 
+((~ CAR A_FERRARI) (~ BMW A_FERRARI)) is the resolvent 
+ 
+prove interation": 7" with clauses 
+(((OWNS JACK A_FERRARI)) (FERRARI A_FERRARI) (BMW A_BMW) ((~ BMW ?X) (CAR ?X)) ((~ FERRARI ?X) (CAR ?X))
+ (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) (OWNS BILL A_BMW)
+ ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y))
+ (SCRATCHES BILL A_FERRARI) (SCRATCHES JOE A_FERRARI) ((SCRATCHES ?X A_FERRARI))
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))
+ ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))
+ ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI))
+ ((~ CAR A_FERRARI) (~ BMW A_FERRARI))) 
+iterating from the back of the clause list ... 
+selected clause # 18 ... 
+looking for a possible resolutions with ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 and ((~ BMW ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 1 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?X) (CAR ?X)) at position 0 
+adding (~ BMW A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (CAR ?X)) at position 1 
+((~ BMW A_FERRARI) (~ BMW A_FERRARI)) is the resolvent 
+ 
+prove interation": 8" with clauses 
+(((OWNS JACK A_FERRARI)) (FERRARI A_FERRARI) (BMW A_BMW) ((~ BMW ?X) (CAR ?X)) ((~ FERRARI ?X) (CAR ?X))
+ (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) (OWNS BILL A_BMW)
+ ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y))
+ (SCRATCHES BILL A_FERRARI) (SCRATCHES JOE A_FERRARI) ((SCRATCHES ?X A_FERRARI))
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))
+ ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))
+ ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI))
+ ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) ((~ BMW A_FERRARI) (~ BMW A_FERRARI))) 
+iterating from the back of the clause list ... 
+selected clause # 19 ... 
+looking for a possible resolutions with ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 18 ... 
+looking for a possible resolutions with ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 and ((~ BMW ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 1 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?X) (CAR ?X)) at position 0 
+adding (~ BMW A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (CAR ?X)) at position 1 
+((~ BMW A_FERRARI) (~ BMW A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 and ((~ FERRARI ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 1 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ FERRARI ?X) (CAR ?X)) at position 0 
+adding (~ FERRARI A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ FERRARI A_FERRARI) (CAR ?X)) at position 1 
+((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) is the resolvent 
+ 
+prove interation": 9" with clauses 
+(((OWNS JACK A_FERRARI)) (FERRARI A_FERRARI) (BMW A_BMW) ((~ BMW ?X) (CAR ?X)) ((~ FERRARI ?X) (CAR ?X))
+ (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) (OWNS BILL A_BMW)
+ ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y))
+ (SCRATCHES BILL A_FERRARI) (SCRATCHES JOE A_FERRARI) ((SCRATCHES ?X A_FERRARI))
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))
+ ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))
+ ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI))
+ ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI))) 
+iterating from the back of the clause list ... 
+selected clause # 20 ... 
+looking for a possible resolutions with ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 19 ... 
+looking for a possible resolutions with ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 18 ... 
+looking for a possible resolutions with ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 and ((~ BMW ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 1 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?X) (CAR ?X)) at position 0 
+adding (~ BMW A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (CAR ?X)) at position 1 
+((~ BMW A_FERRARI) (~ BMW A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 and ((~ FERRARI ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 1 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ FERRARI ?X) (CAR ?X)) at position 0 
+adding (~ FERRARI A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ FERRARI A_FERRARI) (CAR ?X)) at position 1 
+((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 17 ... 
+looking for a possible resolutions with ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+possible resolution .. 
+ ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 1 and ((OWNS JACK A_FERRARI)) at position 0 with substitution ((?Y . A_FERRARI) (?X . JACK)) 
+applying substitution ((?Y . A_FERRARI) (?X . JACK)) to ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 0 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?Y . A_FERRARI) (?X . JACK)) to ((~ BMW A_FERRARI) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 1 
+applying substitution ((?Y . A_FERRARI) (?X . JACK)) to ((~ BMW A_FERRARI) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 10 
+adding (~ CAR A_FERRARI) to the resolventapplying substitution ((?Y . A_FERRARI) (?X . JACK)) to ((OWNS JACK A_FERRARI)) at position 0 
+((~ CAR A_FERRARI) (~ BMW A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 2 and ((~ BMW ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 0 
+adding (~ BMW ?Y) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 1 
+adding (~ OWNS A_FERRARI ?Y) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ CAR A_FERRARI)) at position 10 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW ?X) (CAR ?X)) at position 0 
+adding (~ BMW A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (CAR ?X)) at position 1 
+((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) is the resolvent 
+ 
+prove interation": 10" with clauses 
+(((OWNS JACK A_FERRARI)) (FERRARI A_FERRARI) (BMW A_BMW) ((~ BMW ?X) (CAR ?X)) ((~ FERRARI ?X) (CAR ?X))
+ (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) (OWNS BILL A_BMW)
+ ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y))
+ (SCRATCHES BILL A_FERRARI) (SCRATCHES JOE A_FERRARI) ((SCRATCHES ?X A_FERRARI))
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))
+ ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))
+ ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI))
+ ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI))
+ ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y))) 
+iterating from the back of the clause list ... 
+selected clause # 21 ... 
+looking for a possible resolutions with ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 20 ... 
+looking for a possible resolutions with ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 19 ... 
+looking for a possible resolutions with ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 18 ... 
+looking for a possible resolutions with ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 and ((~ BMW ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 1 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?X) (CAR ?X)) at position 0 
+adding (~ BMW A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (CAR ?X)) at position 1 
+((~ BMW A_FERRARI) (~ BMW A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 and ((~ FERRARI ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 1 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ FERRARI ?X) (CAR ?X)) at position 0 
+adding (~ FERRARI A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ FERRARI A_FERRARI) (CAR ?X)) at position 1 
+((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 17 ... 
+looking for a possible resolutions with ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+possible resolution .. 
+ ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 1 and ((OWNS JACK A_FERRARI)) at position 0 with substitution ((?Y . A_FERRARI) (?X . JACK)) 
+applying substitution ((?Y . A_FERRARI) (?X . JACK)) to ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 0 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?Y . A_FERRARI) (?X . JACK)) to ((~ BMW A_FERRARI) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 1 
+applying substitution ((?Y . A_FERRARI) (?X . JACK)) to ((~ BMW A_FERRARI) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 10 
+adding (~ CAR A_FERRARI) to the resolventapplying substitution ((?Y . A_FERRARI) (?X . JACK)) to ((OWNS JACK A_FERRARI)) at position 0 
+((~ CAR A_FERRARI) (~ BMW A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 2 and ((~ BMW ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 0 
+adding (~ BMW ?Y) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 1 
+adding (~ OWNS A_FERRARI ?Y) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ CAR A_FERRARI)) at position 10 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW ?X) (CAR ?X)) at position 0 
+adding (~ BMW A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (CAR ?X)) at position 1 
+((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) is the resolvent 
+ 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 2 and ((~ FERRARI ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 0 
+adding (~ BMW ?Y) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 1 
+adding (~ OWNS A_FERRARI ?Y) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ CAR A_FERRARI)) at position 10 
+applying substitution ((?X . A_FERRARI)) to ((~ FERRARI ?X) (CAR ?X)) at position 0 
+adding (~ FERRARI A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ FERRARI A_FERRARI) (CAR ?X)) at position 1 
+((~ FERRARI A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) is the resolvent 
+ 
+prove interation": 11" with clauses 
+(((OWNS JACK A_FERRARI)) (FERRARI A_FERRARI) (BMW A_BMW) ((~ BMW ?X) (CAR ?X)) ((~ FERRARI ?X) (CAR ?X))
+ (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) (OWNS BILL A_BMW)
+ ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y))
+ (SCRATCHES BILL A_FERRARI) (SCRATCHES JOE A_FERRARI) ((SCRATCHES ?X A_FERRARI))
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))
+ ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI))
+ ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI))
+ ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI))
+ ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) ((~ FERRARI A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y))) 
+iterating from the back of the clause list ... 
+selected clause # 22 ... 
+looking for a possible resolutions with ((~ FERRARI A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (BMW A_BMW) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 21 ... 
+looking for a possible resolutions with ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 20 ... 
+looking for a possible resolutions with ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 19 ... 
+looking for a possible resolutions with ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 18 ... 
+looking for a possible resolutions with ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 and ((~ BMW ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 1 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?X) (CAR ?X)) at position 0 
+adding (~ BMW A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (CAR ?X)) at position 1 
+((~ BMW A_FERRARI) (~ BMW A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 and ((~ FERRARI ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 0 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) at position 1 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ FERRARI ?X) (CAR ?X)) at position 0 
+adding (~ FERRARI A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ FERRARI A_FERRARI) (CAR ?X)) at position 1 
+((~ FERRARI A_FERRARI) (~ BMW A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ BMW A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 17 ... 
+looking for a possible resolutions with ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+possible resolution .. 
+ ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 1 and ((OWNS JACK A_FERRARI)) at position 0 with substitution ((?Y . A_FERRARI) (?X . JACK)) 
+applying substitution ((?Y . A_FERRARI) (?X . JACK)) to ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 0 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?Y . A_FERRARI) (?X . JACK)) to ((~ BMW A_FERRARI) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 1 
+applying substitution ((?Y . A_FERRARI) (?X . JACK)) to ((~ BMW A_FERRARI) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 10 
+adding (~ CAR A_FERRARI) to the resolventapplying substitution ((?Y . A_FERRARI) (?X . JACK)) to ((OWNS JACK A_FERRARI)) at position 0 
+((~ CAR A_FERRARI) (~ BMW A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 2 and ((~ BMW ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 0 
+adding (~ BMW ?Y) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 1 
+adding (~ OWNS A_FERRARI ?Y) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ CAR A_FERRARI)) at position 10 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW ?X) (CAR ?X)) at position 0 
+adding (~ BMW A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (CAR ?X)) at position 1 
+((~ BMW A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) is the resolvent 
+ 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 2 and ((~ FERRARI ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 0 
+adding (~ BMW ?Y) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) at position 1 
+adding (~ OWNS A_FERRARI ?Y) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ CAR A_FERRARI)) at position 10 
+applying substitution ((?X . A_FERRARI)) to ((~ FERRARI ?X) (CAR ?X)) at position 0 
+adding (~ FERRARI A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ FERRARI A_FERRARI) (CAR ?X)) at position 1 
+((~ FERRARI A_FERRARI) (~ OWNS A_FERRARI ?Y) (~ BMW ?Y)) is the resolvent 
+ 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 16 ... 
+looking for a possible resolutions with ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 15 ... 
+looking for a possible resolutions with ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+possible resolution .. 
+ ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 1 and ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 0 
+adding (~ FERRARI A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 1 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 0 
+adding (~ OWNS A_FERRARI ?Y) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS A_FERRARI ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 1 
+adding (~ BMW ?Y) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS A_FERRARI ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 
+((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ FERRARI A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 14 ... 
+looking for a possible resolutions with ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 13 ... 
+looking for a possible resolutions with ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+possible resolution .. 
+ ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 1 and ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 0 
+adding (~ BMW A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) at position 1 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 0 
+adding (~ OWNS A_FERRARI ?Y) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS A_FERRARI ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 1 
+adding (~ BMW ?Y) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ OWNS A_FERRARI ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 
+((~ BMW ?Y) (~ OWNS A_FERRARI ?Y) (~ BMW A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 12 ... 
+looking for a possible resolutions with ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with (BMW A_BMW) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with ((~ BMW ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 0 and ((~ BMW ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 0 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 1 
+adding (~ RACING_CAR_FAN A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ BMW ?X) (CAR ?X)) at position 0 
+adding (~ BMW A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ BMW A_FERRARI) (CAR ?X)) at position 1 
+((~ BMW A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with ((~ FERRARI ?X) (CAR ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 0 and ((~ FERRARI ?X) (CAR ?X)) at position 1 with substitution ((?X . A_FERRARI)) 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 0 
+applying substitution ((?X . A_FERRARI)) to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 1 
+adding (~ RACING_CAR_FAN A_FERRARI) to the resolventapplying substitution ((?X . A_FERRARI)) to ((~ FERRARI ?X) (CAR ?X)) at position 0 
+adding (~ FERRARI A_FERRARI) to the resolvent 
+applying substitution ((?X . A_FERRARI)) to ((~ FERRARI A_FERRARI) (CAR ?X)) at position 1 
+((~ FERRARI A_FERRARI) (~ RACING_CAR_FAN A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+possible resolution .. 
+ ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 1 and ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 with substitution NIL 
+applying substitution NIL to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 0 
+adding (~ CAR A_FERRARI) to the resolventapplying substitution NIL to ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) at position 1 
+applying substitution NIL to ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 0 
+adding (~ OWNS ?X ?Y) to the resolvent 
+applying substitution NIL to ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 1 
+adding (~ BMW ?Y) to the resolvent 
+applying substitution NIL to ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) at position 2 
+((~ BMW ?Y) (~ OWNS ?X ?Y) (~ CAR A_FERRARI)) is the resolvent 
+ 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) with (SCRATCHES JOE A_FERRARI) 
+selected clause # 11 ... 
+looking for a possible resolutions with ((SCRATCHES ?X A_FERRARI)) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with ((OWNS JACK A_FERRARI)) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with (FERRARI A_FERRARI) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with (BMW A_BMW) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with ((~ BMW ?X) (CAR ?X)) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with ((~ FERRARI ?X) (CAR ?X)) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with (((~ SCRATCHES BILL A_FERRARI)) ((~ SCRATCHES JOE A_FERRARI))) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with (OWNS BILL A_BMW) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with ((~ OWNS ?X ?Y) (~ BMW ?Y) (RACING_CAR_FAN ?X)) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) 
+possible resolution .. 
+ ((SCRATCHES ?X A_FERRARI)) at position 0 and ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) at position 1 with substitution ((?Y . A_FERRARI)) 
+applying substitution ((?Y . A_FERRARI)) to ((SCRATCHES ?X A_FERRARI)) at position 0 
+applying substitution ((?Y . A_FERRARI)) to ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) at position 0 
+adding (~ RACING_CAR_FAN ?X) to the resolvent 
+applying substitution ((?Y . A_FERRARI)) to ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) at position 1 
+applying substitution ((?Y . A_FERRARI)) to ((~ RACING_CAR_FAN ?X) (~ SCRATCHES ?X ?Y) (~ CAR ?Y)) at position 2 
+adding (~ CAR A_FERRARI) to the resolvent 
+((~ CAR A_FERRARI) (~ RACING_CAR_FAN ?X)) is the resolvent 
+ 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with (SCRATCHES BILL A_FERRARI) 
+trying to resolve clause ((SCRATCHES ?X A_FERRARI)) with (SCRATCHES JOE A_FERRARI) 
+"The theorem can't be proved"
+[129]> cd '/home/s/s_kattoj/AI-COMP472/fancyprover'
+
+*** - EVAL: variable CD has no value
+The following restarts are available:
+USE-VALUE      :R1      You may input a value to be used instead of CD.
+STORE-VALUE    :R2      You may input a new value for CD.
+ABORT          :R3      ABORT
+Break 1 [130]> cd '/home/s/s_kattoj/AI-COMP472/simpleprover'
+
+*** - EVAL: variable CD has no value
+The following restarts are available:
+USE-VALUE      :R1      You may input a value to be used instead of CD.
+STORE-VALUE    :R2      You may input a new value for CD.
+ABORT          :R3      ABORT
+ABORT          :R4      ABORT
+Break 2 [131]> 

@@ -1,0 +1,6 @@
+cat(tuna)
+ALL (X, EXI(Y, (dog(Y) ^ owns(X,Y)) => animallover(X)))
+ALL (X, animallover(X) => ALL (Y, animal(Y) => ~kills(X,Y)))
+ALL (X, cat(X) => animal(X))
+EXI (X, dog(X) ^ owns(Jack,X))
+~kills(jack, tuna) => kills(curiosity, tuna)

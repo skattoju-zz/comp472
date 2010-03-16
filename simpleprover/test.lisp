@@ -1,3 +1,4 @@
+(in-package "testprover")
 (Defun Test0 ()
   (ProveDriver '(( ( ~ E ?x) ( V ?x) (S ?x (f ?x)))
 		 ( ( ~ E ?u) ( V ?u) (C (f ?x)))
@@ -16,7 +17,7 @@
 		  ((~ M) (C)))
 	       '((~ D))))
 
-(in-package "testprover")
+
 (Defun ttest2 ()
   (ProveDriver '( ((mother amity betsy))
 		  ((~ daughter ?u ?w) (mother ?w ?u))
@@ -49,11 +50,11 @@
 (Defun ttest5()
 	 (ProveDriver '( ((dog d))
 			 ((owns jack d))
+			 ((~ cat ?u) (animal ?u)) 
 			 ((~ dog ?x) (~ owns ?x ?y) (animallover ?x))
 			 ((~ animallover ?z) (~ animal ?w) (~ kills ?z ?w))
 			 ((kills jack tuna) (kills curiosity tuna))
-			 ((cat tuna))
-			 ((~ cat ?u) (animal ?u))) 
+			 ((cat tuna)))
 	'((~ curiosity kills cat))))
 
 
